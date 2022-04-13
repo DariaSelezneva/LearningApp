@@ -22,10 +22,7 @@ class MainTabBarController: UITabBarController {
         userVC.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "Profile"), selectedImage: UIImage(named: "Profile"))
         viewControllers = [homeVC, exploreVC, messagesVC, userVC]
         tabBar.backgroundColor = .white
-        tabBar.tintColor = .red
-        tabBar.layer.shadowColor = UIColor.black.cgColor
-        tabBar.layer.shadowOpacity = 0.08
-        tabBar.layer.shadowOffset = CGSize(width: 0, height: -3)
-        tabBar.layer.shadowRadius = 10
+        tabBar.tintColor = UIColor.appRed
+        tabBar.dropShadow(color: .black, height: -3, shadowRadius: 10, opacity: 0.08, cornerRadius: 0)
     }
 }
