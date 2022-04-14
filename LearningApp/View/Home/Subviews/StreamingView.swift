@@ -32,7 +32,9 @@ class StreamingView: UIView {
         self.pinToEdges(subview: collectionView)
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.indicatorStyle = .white
         collectionViewLayout.scrollDirection = .horizontal
+        collectionView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: -10, right: 0)
         collectionView.register(StreamingCollectionViewCell.self, forCellWithReuseIdentifier: StreamingCollectionViewCell.reuseIdentifier)
     }
     

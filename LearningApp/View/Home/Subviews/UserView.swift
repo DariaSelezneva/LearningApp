@@ -15,11 +15,7 @@ class UserView: UIView {
     
     private let avatarView = UserAvatarView()
     private let greetingLabel = UILabel()
-    
-    private let rewardStackView = UIStackView()
-    private let rewardImageView = UIImageView()
     private let rewardLabel = UILabel()
-    private let pointsLabel = UILabel()
     
     private let bellIndicatorView = BellIndicatorView()
 
@@ -47,30 +43,25 @@ class UserView: UIView {
         labelsStackView.axis = .vertical
         labelsStackView.spacing = 8
         labelsStackView.addArrangedSubview(greetingLabel)
-        labelsStackView.addArrangedSubview(rewardStackView)
+        labelsStackView.addArrangedSubview(rewardLabel)
         greetingLabel.textColor = .appDarkGray
         greetingLabel.font = UIFont(name: poppinsBold, size: 16)
-        rewardStackView.axis = .horizontal
-        rewardStackView.spacing = 10
-        rewardStackView.addArrangedSubview(rewardImageView)
-        rewardStackView.addArrangedSubview(rewardLabel)
-        rewardStackView.addArrangedSubview(pointsLabel)
-        rewardImageView.setDimensions(width: 10, height: 15)
-        rewardImageView.image = UIImage(named: "Reward")
         rewardLabel.textColor = .appYellow
-        rewardLabel.font = UIFont(name: poppinsSemiBold, size: 14)
-        pointsLabel.textColor = .appYellow
-        pointsLabel.font = UIFont(name: poppinsRegular, size: 14)
-        pointsLabel.text = "Points"
     }
     
     func update(with user: UserViewModel) {
         avatarView.update(image: user.image, isOnline: user.isOnline)
         greetingLabel.text = "Hello, \(user.name.capitalized)!"
         let hasReward = user.reward != nil
-        rewardLabel.text = hasReward ? "+\(user.reward!)" : ""
-        rewardImageView.isHidden = !hasReward
-        pointsLabel.isHidden = !hasReward
+        let rewardString = NSMutableAttributedString(string: hasReward ? "   +\(user.reward!)" : "", attributes: [.font : UIFont(name: poppinsSemiBold, size: 14)!])
+        let pointsString = NSMutableAttributedString(string: " Points", attributes: [.font : UIFont(name: poppinsRegular, size: 14)!])
+        rewardString.append(pointsString)
+        let imageAttachment = NSTextAttachment()
+        imageAttachment.image = UIImage(named: "Reward")
+        imageAttachment.bounds = CGRect(x: 0, y: -2, width: 10, height: 15)
+        rewardString.insert(NSAttributedString(attachment: imageAttachment), at: 0)
+        rewardLabel.attributedText = rewardString
+        rewardLabel.isHidden = !hasReward
         bellIndicatorView.update(showsIndicator: user.hasNotifications)
     }
 }

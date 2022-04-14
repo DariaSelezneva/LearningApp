@@ -16,6 +16,10 @@ protocol HomeDisplayLogic {
 
 class HomeViewController: UIViewController {
     
+    private let scrollView = UIScrollView()
+    private let containerView = UIView()
+    private let stackView = UIStackView()
+    
     private let userView = UserView()
     private let streamingView = StreamingView()
     private let coursesView = CoursesView()
@@ -23,16 +27,31 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        view.pinToLayoutMargins(subview: userView, bottom: nil)
-        view.pinToLayoutMargins(subview: streamingView, top: nil, bottom: nil)
-        streamingView.topAnchor.constraint(equalTo: userView.bottomAnchor, constant: 12).isActive = true
+        view.pinToEdges(subview: scrollView)
+        scrollView.setWidth(equalTo: view)
+        scrollView.pinToEdges(subview: containerView)
+        containerView.setWidth(equalTo: scrollView)
+        containerView.pinToEdges(subview: stackView, leading: 20, trailing: 20, top: nil, bottom: 16)
+        stackView.topAnchor.constraint(equalTo: containerView.layoutMarginsGuide.topAnchor, constant: 20).isActive = true
+        stackView.axis = .vertical
+        stackView.spacing = 20
+        stackView.distribution = .equalSpacing
+        stackView.addArrangedSubview(userView)
+        stackView.addArrangedSubview(streamingView)
+        stackView.addArrangedSubview(coursesView)
         streamingView.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        view.pinToLayoutMargins(subview: coursesView, top: nil, bottom: nil)
-        coursesView.topAnchor.constraint(equalTo: streamingView.bottomAnchor, constant: 12).isActive = true
-        coursesView.filterView.onSelection = { index in
-            
+        coursesView.filterView.onSelection = { [unowned self] filter in
+            if filter == "All" {
+                displayCourses(CourseViewModel.sample)
+            }
+            else {
+                displayCourses(CourseViewModel.sample.filter({$0.theme == filter}))
+            }
         }
         displayUser(UserViewModel.sample)
+        displayStreamers(StreamerViewModel.sample)
+        displayCourseFilters(["All", "TARDIS", "Creatures", "Other"])
+        displayCourses(CourseViewModel.sample)
     }
 }
 
@@ -51,6 +70,6 @@ extension HomeViewController: HomeDisplayLogic {
     }
     
     func displayCourses(_ courses: [CourseViewModel]) {
-        
+        coursesView.update(courses: courses)
     }
 }

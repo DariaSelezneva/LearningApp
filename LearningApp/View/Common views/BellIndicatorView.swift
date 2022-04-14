@@ -30,8 +30,8 @@ class BellIndicatorView: UIView {
         bellImageView.contentMode = .scaleAspectFit
         bellImageView.tintColor = .black
         bellImageView.pinToEdges(subview: indicatorView, leading: nil, trailing: 0, top: 0, bottom: nil)
-        indicatorView.setDimensions(width: 6, height: 6)
-        indicatorView.layer.cornerRadius = 3
+        indicatorView.setDimensions(width: 8, height: 8)
+        indicatorView.layer.cornerRadius = 4
         indicatorView.layer.borderWidth = 1
         indicatorView.layer.borderColor = UIColor.white.cgColor
         indicatorView.backgroundColor = .appRed

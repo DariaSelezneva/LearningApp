@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43635D342807FD7F00D633CA /* AuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43635D332807FD7F00D633CA /* AuthorView.swift */; };
+		43635D36280809F400D633CA /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43635D35280809F400D633CA /* GradientView.swift */; };
+		43635D382808106F00D633CA /* ColoredLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43635D372808106F00D633CA /* ColoredLabel.swift */; };
+		43635D3A2808137000D633CA /* CourseInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43635D392808137000D633CA /* CourseInfoView.swift */; };
+		43635D3C28081BAB00D633CA /* PaginationIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43635D3B28081BAB00D633CA /* PaginationIndicatorView.swift */; };
+		43635D3E280842DA00D633CA /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43635D3D280842DA00D633CA /* HomePresenter.swift */; };
+		43635D412808432E00D633CA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43635D402808432E00D633CA /* User.swift */; };
+		43635D43280843C400D633CA /* CourseDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43635D42280843C400D633CA /* CourseDetailsViewModel.swift */; };
+		43635D452808447000D633CA /* LessonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43635D442808447000D633CA /* LessonViewModel.swift */; };
 		43878C892806A2DE00ED092C /* StreamingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43878C882806A2DE00ED092C /* StreamingCollectionViewCell.swift */; };
 		43878C8B2806A2F900ED092C /* StreamingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43878C8A2806A2F900ED092C /* StreamingView.swift */; };
 		43878C8D2806A30B00ED092C /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43878C8C2806A30B00ED092C /* UserView.swift */; };
@@ -28,6 +37,7 @@
 		43878CB52806FC5100ED092C /* e_String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43878CB42806FC5100ED092C /* e_String.swift */; };
 		43878CB8280704A800ED092C /* BellIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43878CB7280704A800ED092C /* BellIndicatorView.swift */; };
 		43878CBA280707B400ED092C /* UserAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43878CB9280707B400ED092C /* UserAvatarView.swift */; };
+		43878CBC280718B900ED092C /* CoursesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43878CBB280718B900ED092C /* CoursesCollectionView.swift */; };
 		4389153E2805B5EA0070A2BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389153D2805B5EA0070A2BD /* AppDelegate.swift */; };
 		438915422805B5EA0070A2BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438915412805B5EA0070A2BD /* ViewController.swift */; };
 		438915472805B5EC0070A2BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 438915462805B5EC0070A2BD /* Assets.xcassets */; };
@@ -40,6 +50,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43635D332807FD7F00D633CA /* AuthorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorView.swift; sourceTree = "<group>"; };
+		43635D35280809F400D633CA /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		43635D372808106F00D633CA /* ColoredLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredLabel.swift; sourceTree = "<group>"; };
+		43635D392808137000D633CA /* CourseInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseInfoView.swift; sourceTree = "<group>"; };
+		43635D3B28081BAB00D633CA /* PaginationIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationIndicatorView.swift; sourceTree = "<group>"; };
+		43635D3D280842DA00D633CA /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		43635D402808432E00D633CA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		43635D42280843C400D633CA /* CourseDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsViewModel.swift; sourceTree = "<group>"; };
+		43635D442808447000D633CA /* LessonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewModel.swift; sourceTree = "<group>"; };
 		43878C882806A2DE00ED092C /* StreamingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingCollectionViewCell.swift; sourceTree = "<group>"; };
 		43878C8A2806A2F900ED092C /* StreamingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingView.swift; sourceTree = "<group>"; };
 		43878C8C2806A30B00ED092C /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
@@ -61,6 +80,7 @@
 		43878CB42806FC5100ED092C /* e_String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_String.swift; sourceTree = "<group>"; };
 		43878CB7280704A800ED092C /* BellIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BellIndicatorView.swift; sourceTree = "<group>"; };
 		43878CB9280707B400ED092C /* UserAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAvatarView.swift; sourceTree = "<group>"; };
+		43878CBB280718B900ED092C /* CoursesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesCollectionView.swift; sourceTree = "<group>"; };
 		4389153A2805B5EA0070A2BD /* LearningApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4389153D2805B5EA0070A2BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		438915412805B5EA0070A2BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,14 +105,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		43878C9A2806D2B900ED092C /* Model */ = {
+		43635D3F2808432000D633CA /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				43635D402808432E00D633CA /* User.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		43635D462808485F00D633CA /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		43878C9A2806D2B900ED092C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				43878CA32806EEDE00ED092C /* UserViewModel.swift */,
-				43878CA52806F01E00ED092C /* CourseViewModel.swift */,
 				43878C9B2806D2E900ED092C /* StreamerViewModel.swift */,
+				43878CA52806F01E00ED092C /* CourseViewModel.swift */,
+				43635D42280843C400D633CA /* CourseDetailsViewModel.swift */,
+				43635D442808447000D633CA /* LessonViewModel.swift */,
 			);
-			path = Model;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		43878C9D2806D32B00ED092C /* Interactor */ = {
@@ -106,6 +143,7 @@
 		43878C9F2806D34A00ED092C /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				43635D3D280842DA00D633CA /* HomePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -134,6 +172,7 @@
 			children = (
 				43878CB7280704A800ED092C /* BellIndicatorView.swift */,
 				43878CB9280707B400ED092C /* UserAvatarView.swift */,
+				43635D372808106F00D633CA /* ColoredLabel.swift */,
 			);
 			path = "Common views";
 			sourceTree = "<group>";
@@ -162,8 +201,10 @@
 				438915512805B8820070A2BD /* View */,
 				43878C9D2806D32B00ED092C /* Interactor */,
 				43878C9F2806D34A00ED092C /* Presenter */,
+				43635D462808485F00D633CA /* Router */,
 				43878CA02806D35900ED092C /* Repository */,
-				43878C9A2806D2B900ED092C /* Model */,
+				43635D3F2808432000D633CA /* Entity */,
+				43878C9A2806D2B900ED092C /* ViewModel */,
 				438915632805C8A00070A2BD /* Extensions */,
 				438915462805B5EC0070A2BD /* Assets.xcassets */,
 				43878CA72806F81000ED092C /* Fonts */,
@@ -205,7 +246,12 @@
 				43878C902806A35A00ED092C /* CoursesView.swift */,
 				43878C922806A38200ED092C /* CoursesFilterView.swift */,
 				43878C942806A3A100ED092C /* FilterCollectionViewCell.swift */,
+				43878CBB280718B900ED092C /* CoursesCollectionView.swift */,
 				43878C8E2806A34200ED092C /* CourseCollectionViewCell.swift */,
+				43635D392808137000D633CA /* CourseInfoView.swift */,
+				43635D332807FD7F00D633CA /* AuthorView.swift */,
+				43635D35280809F400D633CA /* GradientView.swift */,
+				43635D3B28081BAB00D633CA /* PaginationIndicatorView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -336,23 +382,33 @@
 				43878CB52806FC5100ED092C /* e_String.swift in Sources */,
 				438915622805BFA50070A2BD /* UserViewController.swift in Sources */,
 				43878C9C2806D2E900ED092C /* StreamerViewModel.swift in Sources */,
+				43635D3E280842DA00D633CA /* HomePresenter.swift in Sources */,
+				43635D412808432E00D633CA /* User.swift in Sources */,
 				438915602805BF990070A2BD /* MessagesViewController.swift in Sources */,
 				43878C8B2806A2F900ED092C /* StreamingView.swift in Sources */,
+				43635D382808106F00D633CA /* ColoredLabel.swift in Sources */,
 				43878C892806A2DE00ED092C /* StreamingCollectionViewCell.swift in Sources */,
 				43878C8F2806A34200ED092C /* CourseCollectionViewCell.swift in Sources */,
 				4389155E2805BF850070A2BD /* HomeViewController.swift in Sources */,
+				43635D36280809F400D633CA /* GradientView.swift in Sources */,
 				43878CB32806F97600ED092C /* Fonts.swift in Sources */,
 				43878C972806C4D400ED092C /* e_UIView.swift in Sources */,
+				43635D452808447000D633CA /* LessonViewModel.swift in Sources */,
 				43878C952806A3A100ED092C /* FilterCollectionViewCell.swift in Sources */,
+				43878CBC280718B900ED092C /* CoursesCollectionView.swift in Sources */,
 				4389155C2805BF690070A2BD /* ExploreViewController.swift in Sources */,
 				438915422805B5EA0070A2BD /* ViewController.swift in Sources */,
+				43635D3C28081BAB00D633CA /* PaginationIndicatorView.swift in Sources */,
 				43878C8D2806A30B00ED092C /* UserView.swift in Sources */,
 				43878C992806CE1700ED092C /* e_UIColor.swift in Sources */,
 				43878C932806A38200ED092C /* CoursesFilterView.swift in Sources */,
+				43635D43280843C400D633CA /* CourseDetailsViewModel.swift in Sources */,
+				43635D342807FD7F00D633CA /* AuthorView.swift in Sources */,
 				43878CBA280707B400ED092C /* UserAvatarView.swift in Sources */,
 				43878CB8280704A800ED092C /* BellIndicatorView.swift in Sources */,
 				4389153E2805B5EA0070A2BD /* AppDelegate.swift in Sources */,
 				43878CA22806D43D00ED092C /* HomeInteractor.swift in Sources */,
+				43635D3A2808137000D633CA /* CourseInfoView.swift in Sources */,
 				438915532805BDCF0070A2BD /* MainTabBarController.swift in Sources */,
 				43878CA62806F01E00ED092C /* CourseViewModel.swift in Sources */,
 				43878C912806A35A00ED092C /* CoursesView.swift in Sources */,

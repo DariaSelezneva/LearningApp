@@ -9,20 +9,20 @@ import UIKit
 
 class CoursesFilterView: UIView {
     
-    private var dataSource: [String] = ["All", "UI/UX", "Illustration", "3D Animation"]
+    private var dataSource: [String] = []
     private var selectedFilter: Int = 0 {
         didSet {
             collectionView.reloadData()
         }
     }
     
-    lazy var collectionView: UICollectionView = {
+    private lazy var collectionView: UICollectionView = {
         return UICollectionView(frame: CGRect.zero, collectionViewLayout: collectionViewLayout)
     }()
     
-    let collectionViewLayout = UICollectionViewFlowLayout()
+    private let collectionViewLayout = UICollectionViewFlowLayout()
     
-    var onSelection: ((Int) -> Void)?
+    var onSelection: ((String) -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,11 +33,13 @@ class CoursesFilterView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func initialSetup() {
+    private func initialSetup() {
         self.pinToEdges(subview: collectionView)
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.indicatorStyle = .white
         collectionViewLayout.scrollDirection = .horizontal
+        collectionView.scrollIndicatorInsets = UIEdgeInsets(top: 0, left: 0, bottom: -10, right: 0)
         collectionView.register(FilterCollectionViewCell.self, forCellWithReuseIdentifier: FilterCollectionViewCell.reuseIdentifier)
     }
     
@@ -58,7 +60,7 @@ extension CoursesFilterView: UICollectionViewDataSource {
         let isSelected = indexPath.row == selectedFilter
         cell.update(text: filter, isSelected: isSelected)
         if isSelected {
-            cell.dropShadow(color: .appRed!, height: 2, shadowRadius: 5, opacity: 0.2, cornerRadius: 8)
+            cell.dropShadow(color: .appRed!, height: 2, shadowRadius: 5, opacity: 0.3, cornerRadius: 8)
         }
         else {
             cell.layer.shadowColor = UIColor.clear.cgColor
@@ -82,6 +84,6 @@ extension CoursesFilterView: UICollectionViewDelegateFlowLayout {
 extension CoursesFilterView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedFilter = indexPath.row
-        onSelection?(indexPath.row)
+        onSelection?(dataSource[indexPath.row])
     }
 }

@@ -7,12 +7,37 @@
 
 import Foundation
 
-protocol HomeInteractorLogic {
+protocol HomeInteractionLogic {
     func getUser()
     func getStreamers()
     func getCourses()
+    func didSelectStreamer(_ id: Int)
+    func didSelectFilter(_ filter: String)
+    func didSelectCourse(_ id: Int)
 }
 
-class HomeInteractor {
+class HomeInteractor: HomeInteractionLogic {
+    func getUser() {
+        
+    }
     
+    func getStreamers() {
+        
+    }
+    
+    func getCourses() {
+        
+    }
+    
+    func didSelectStreamer(_ id: Int) {
+        
+    }
+    
+    func didSelectFilter(_ filter: String) {
+        
+    }
+    
+    func didSelectCourse(_ id: Int) {
+        
+    }
 }
