@@ -45,6 +45,13 @@
 		4389155E2805BF850070A2BD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389155D2805BF850070A2BD /* HomeViewController.swift */; };
 		438915602805BF990070A2BD /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389155F2805BF990070A2BD /* MessagesViewController.swift */; };
 		438915622805BFA50070A2BD /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438915612805BFA50070A2BD /* UserViewController.swift */; };
+		DA8D31BD28096739006E5B3F /* CourseDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D31BC28096739006E5B3F /* CourseDetailsViewController.swift */; };
+		DA8D31BF2809682F006E5B3F /* ColoredLabelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D31BE2809682F006E5B3F /* ColoredLabelsView.swift */; };
+		DA8D31C128096BBD006E5B3F /* LessonsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D31C028096BBD006E5B3F /* LessonsTableView.swift */; };
+		DA8D31C4280985AC006E5B3F /* LessonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D31C3280985AC006E5B3F /* LessonTableViewCell.swift */; };
+		DA8D31C6280993F8006E5B3F /* LessonPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D31C5280993F8006E5B3F /* LessonPlayView.swift */; };
+		DA8D31C82809AAB9006E5B3F /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D31C72809AAB9006E5B3F /* HomeRouter.swift */; };
+		DA8D31CA2809AFEC006E5B3F /* FollowClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8D31C92809AFEC006E5B3F /* FollowClassViewController.swift */; };
 		DAC9D81928095096009929E9 /* e_UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC9D81828095096009929E9 /* e_UIColor.swift */; };
 		DAC9D81B28095160009929E9 /* LessonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC9D81A28095160009929E9 /* LessonViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -90,6 +97,13 @@
 		4389155D2805BF850070A2BD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4389155F2805BF990070A2BD /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		438915612805BFA50070A2BD /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		DA8D31BC28096739006E5B3F /* CourseDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CourseDetailsViewController.swift; path = LearningApp/ViewModel/CourseDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
+		DA8D31BE2809682F006E5B3F /* ColoredLabelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoredLabelsView.swift; sourceTree = "<group>"; };
+		DA8D31C028096BBD006E5B3F /* LessonsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LessonsTableView.swift; path = LearningApp/View/Home/CourseDetails/Subviews/LessonsTableView.swift; sourceTree = SOURCE_ROOT; };
+		DA8D31C3280985AC006E5B3F /* LessonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonTableViewCell.swift; sourceTree = "<group>"; };
+		DA8D31C5280993F8006E5B3F /* LessonPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonPlayView.swift; sourceTree = "<group>"; };
+		DA8D31C72809AAB9006E5B3F /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeRouter.swift; path = LearningApp/View/Home/CourseDetails/Subviews/HomeRouter.swift; sourceTree = SOURCE_ROOT; };
+		DA8D31C92809AFEC006E5B3F /* FollowClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FollowClassViewController.swift; path = LearningApp/View/Home/CourseDetails/Subviews/FollowClassViewController.swift; sourceTree = SOURCE_ROOT; };
 		DAC9D81828095096009929E9 /* e_UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_UIColor.swift; sourceTree = "<group>"; };
 		DAC9D81A28095160009929E9 /* LessonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +130,7 @@
 		43635D462808485F00D633CA /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				DA8D31C72809AAB9006E5B3F /* HomeRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -173,6 +188,7 @@
 				43878CB7280704A800ED092C /* BellIndicatorView.swift */,
 				43878CB9280707B400ED092C /* UserAvatarView.swift */,
 				43635D372808106F00D633CA /* ColoredLabel.swift */,
+				DA8D31BE2809682F006E5B3F /* ColoredLabelsView.swift */,
 			);
 			path = "Common views";
 			sourceTree = "<group>";
@@ -260,6 +276,8 @@
 			isa = PBXGroup;
 			children = (
 				438915572805BEDE0070A2BD /* FollowClassModal */,
+				DA8D31BC28096739006E5B3F /* CourseDetailsViewController.swift */,
+				DA8D31C228096C5A006E5B3F /* Subviews */,
 			);
 			path = CourseDetails;
 			sourceTree = "<group>";
@@ -267,6 +285,7 @@
 		438915572805BEDE0070A2BD /* FollowClassModal */ = {
 			isa = PBXGroup;
 			children = (
+				DA8D31C92809AFEC006E5B3F /* FollowClassViewController.swift */,
 			);
 			path = FollowClassModal;
 			sourceTree = "<group>";
@@ -303,6 +322,16 @@
 				DAC9D81828095096009929E9 /* e_UIColor.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DA8D31C228096C5A006E5B3F /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				DA8D31C028096BBD006E5B3F /* LessonsTableView.swift */,
+				DA8D31C3280985AC006E5B3F /* LessonTableViewCell.swift */,
+				DA8D31C5280993F8006E5B3F /* LessonPlayView.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,7 +415,9 @@
 				43635D3E280842DA00D633CA /* HomePresenter.swift in Sources */,
 				43635D412808432E00D633CA /* User.swift in Sources */,
 				438915602805BF990070A2BD /* MessagesViewController.swift in Sources */,
+				DA8D31C4280985AC006E5B3F /* LessonTableViewCell.swift in Sources */,
 				43878C8B2806A2F900ED092C /* StreamingView.swift in Sources */,
+				DA8D31C128096BBD006E5B3F /* LessonsTableView.swift in Sources */,
 				43635D382808106F00D633CA /* ColoredLabel.swift in Sources */,
 				43878C892806A2DE00ED092C /* StreamingCollectionViewCell.swift in Sources */,
 				43878C8F2806A34200ED092C /* CourseCollectionViewCell.swift in Sources */,
@@ -394,16 +425,20 @@
 				43635D36280809F400D633CA /* GradientView.swift in Sources */,
 				43878CB32806F97600ED092C /* Fonts.swift in Sources */,
 				DAC9D81B28095160009929E9 /* LessonViewModel.swift in Sources */,
+				DA8D31CA2809AFEC006E5B3F /* FollowClassViewController.swift in Sources */,
 				43878C972806C4D400ED092C /* e_UIView.swift in Sources */,
 				43878C952806A3A100ED092C /* FilterCollectionViewCell.swift in Sources */,
 				43878CBC280718B900ED092C /* CoursesCollectionView.swift in Sources */,
 				4389155C2805BF690070A2BD /* ExploreViewController.swift in Sources */,
 				438915422805B5EA0070A2BD /* ViewController.swift in Sources */,
+				DA8D31BF2809682F006E5B3F /* ColoredLabelsView.swift in Sources */,
 				43635D3C28081BAB00D633CA /* PaginationIndicatorView.swift in Sources */,
 				43878C8D2806A30B00ED092C /* UserView.swift in Sources */,
 				43878C932806A38200ED092C /* CoursesFilterView.swift in Sources */,
 				43635D43280843C400D633CA /* CourseDetailsViewModel.swift in Sources */,
 				43635D342807FD7F00D633CA /* AuthorView.swift in Sources */,
+				DA8D31C6280993F8006E5B3F /* LessonPlayView.swift in Sources */,
+				DA8D31C82809AAB9006E5B3F /* HomeRouter.swift in Sources */,
 				43878CBA280707B400ED092C /* UserAvatarView.swift in Sources */,
 				43878CB8280704A800ED092C /* BellIndicatorView.swift in Sources */,
 				4389153E2805B5EA0070A2BD /* AppDelegate.swift in Sources */,
@@ -411,6 +446,7 @@
 				43635D3A2808137000D633CA /* CourseInfoView.swift in Sources */,
 				438915532805BDCF0070A2BD /* MainTabBarController.swift in Sources */,
 				43878CA62806F01E00ED092C /* CourseViewModel.swift in Sources */,
+				DA8D31BD28096739006E5B3F /* CourseDetailsViewController.swift in Sources */,
 				43878C912806A35A00ED092C /* CoursesView.swift in Sources */,
 				43878CA42806EEDE00ED092C /* UserViewModel.swift in Sources */,
 			);

@@ -10,16 +10,12 @@ import UIKit
 class CourseInfoView: UIView {
     
     private let commonStackView = UIStackView()
-    
+    private let coloredLabelsView = ColoredLabelsView()
     private let titleDurationStackView = UIStackView()
     private let courseTitleLabel = UILabel()
     private let durationLabel = UILabel()
     
-    private let charsStackView = UIStackView()
-    private let lessonsQuantityLabel = ColoredLabel()
-    private let themeLabel = ColoredLabel()
-    private let costLabel = ColoredLabel()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         initialSetup()
@@ -35,7 +31,7 @@ class CourseInfoView: UIView {
         commonStackView.spacing = 16
         commonStackView.alignment = .leading
         commonStackView.addArrangedSubview(titleDurationStackView)
-        commonStackView.addArrangedSubview(charsStackView)
+        commonStackView.addArrangedSubview(coloredLabelsView)
         titleDurationStackView.axis = .vertical
         titleDurationStackView.spacing = 4
         titleDurationStackView.addArrangedSubview(courseTitleLabel)
@@ -46,14 +42,6 @@ class CourseInfoView: UIView {
         courseTitleLabel.textColor = .white
         durationLabel.font = UIFont(name: poppinsMedium, size: 10)
         durationLabel.textColor = .appGray
-        charsStackView.axis = .horizontal
-        charsStackView.spacing = 12
-        charsStackView.addArrangedSubview(lessonsQuantityLabel)
-        charsStackView.addArrangedSubview(themeLabel)
-        charsStackView.addArrangedSubview(costLabel)
-        lessonsQuantityLabel.backgroundColor = .appMint
-        themeLabel.backgroundColor = .appBlue
-        costLabel.backgroundColor = .appPurple
     }
      
     func update(with course: CourseViewModel) {
@@ -64,8 +52,6 @@ class CourseInfoView: UIView {
         let durationString = NSMutableAttributedString(string: "  " + course.duration)
         durationString.insert(NSAttributedString(attachment: imageAttachment), at: 0)
         durationLabel.attributedText = durationString
-        lessonsQuantityLabel.text = "\(course.numberOfLessons) lessons"
-        themeLabel.text = course.theme
-        costLabel.text = course.cost
+        coloredLabelsView.update(lessonsQuantity: course.numberOfLessons, theme: course.theme, cost: course.cost)
     }
 }

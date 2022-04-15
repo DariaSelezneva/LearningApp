@@ -12,7 +12,7 @@ class CoursesView: UIView {
     private let stackView = UIStackView()
     private let label = UILabel()
     let filterView = CoursesFilterView()
-    private let coursesCollectionView = CoursesCollectionView()
+    let coursesCollectionView = CoursesCollectionView()
     private let paginationView = PaginationIndicatorView()
 
     override init(frame: CGRect) {

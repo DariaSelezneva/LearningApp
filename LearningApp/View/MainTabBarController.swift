@@ -20,7 +20,7 @@ class MainTabBarController: UITabBarController {
         exploreVC.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "Discovery"), selectedImage: UIImage(named: "Discovery"))
         messagesVC.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "Message"), selectedImage: UIImage(named: "Message_fill"))
         userVC.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "Profile"), selectedImage: UIImage(named: "Profile"))
-        viewControllers = [homeVC, exploreVC, messagesVC, userVC]
+        viewControllers = [UINavigationController(rootViewController: homeVC), exploreVC, messagesVC, userVC]
         tabBar.backgroundColor = .white
         tabBar.tintColor = UIColor.appRed
         tabBar.dropShadow(color: .black, height: -3, shadowRadius: 10, opacity: 0.08, cornerRadius: 0)

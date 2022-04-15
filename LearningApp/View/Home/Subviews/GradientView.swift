@@ -25,8 +25,9 @@ class GradientView: UIView {
     private lazy var gradientLayer: CAGradientLayer = {
         let l = CAGradientLayer()
         l.frame = self.bounds
-        l.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
-        l.startPoint = CGPoint(x: 0.5, y: 0.2)
+        l.colors = [UIColor.clear.cgColor, UIColor.clear.cgColor, UIColor.black.cgColor]
+        l.locations = [0.0, 0.5, 1.0]
+        l.startPoint = CGPoint(x: 0.5, y: 0)
         l.endPoint = CGPoint(x: 0.5, y: 1)
         l.cornerRadius = 24
         layer.insertSublayer(l, at: 0)

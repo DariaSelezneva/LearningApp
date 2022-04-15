@@ -13,7 +13,7 @@ struct CourseDetailsViewModel {
     var previewImage: UIImage?
     var videoURL: URL?
     var duration: String
-    var numberOfLessons: Int
+    var numberOfLessons: String
     var theme: String
     var cost: String
     var authorName: String
@@ -29,7 +29,7 @@ struct CourseDetailsViewModel {
         previewImage: UIImage(named: "tardis")!,
         videoURL: nil,
         duration: "5h 21m",
-        numberOfLessons: 6,
+        numberOfLessons: "6 lessons",
         theme: "TARDIS",
         cost: "Free",
         authorName: "Marta Jones",
@@ -45,7 +45,7 @@ struct CourseDetailsViewModel {
         previewImage: UIImage(named: "knitting")!,
         videoURL: nil,
         duration: "4h 45m",
-        numberOfLessons: 8,
+        numberOfLessons: "10 lessons",
         theme: "Other",
         cost: "$40",
         authorName: "Rory Williams",
@@ -60,7 +60,7 @@ struct CourseDetailsViewModel {
         previewImage: UIImage(named: "dalek")!,
         videoURL: nil,
         duration: "2h 20m",
-        numberOfLessons: 4,
+        numberOfLessons: "4 lessons",
         theme: "Creatures",
         cost: "$20",
         authorName: "Rose Tyler",

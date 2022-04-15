@@ -16,6 +16,9 @@ protocol HomeDisplayLogic {
 
 class HomeViewController: UIViewController {
     
+    var interactor : HomeInteractionLogic?
+    var router : HomeRoutingLogic?
+    
     private let scrollView = UIScrollView()
     private let containerView = UIView()
     private let stackView = UIStackView()
@@ -48,10 +51,23 @@ class HomeViewController: UIViewController {
                 displayCourses(CourseViewModel.sample.filter({$0.theme == filter}))
             }
         }
+        coursesView.coursesCollectionView.onSelection = { [unowned self] courseID in
+            interactor?.didSelectCourse(courseID)
+        }
         displayUser(UserViewModel.sample)
         displayStreamers(StreamerViewModel.sample)
         displayCourseFilters(["All", "TARDIS", "Creatures", "Other"])
         displayCourses(CourseViewModel.sample)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
 }
 

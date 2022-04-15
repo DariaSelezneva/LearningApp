@@ -57,6 +57,6 @@ class CourseCollectionViewCell: UICollectionViewCell {
         courseImageView.image = course.image
         extrasLabel.text = course.extras
         courseInfoView.update(with: course)
-        authorView.update(image: course.authorImage, name: course.authorName, position: course.authorPosition)
+        authorView.update(image: course.authorImage, name: course.authorName, position: course.authorPosition, isOnline: false)
     }
 }

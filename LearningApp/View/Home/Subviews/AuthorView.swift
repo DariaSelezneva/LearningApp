@@ -9,12 +9,20 @@ import UIKit
 
 class AuthorView: UIView {
     
+    var nameColor: UIColor? = UIColor.white {
+        didSet {
+            nameLabel.textColor = nameColor
+        }
+    }
+    
     private let horizontalStackView = UIStackView()
     private let verticalStackView = UIStackView()
     
+    private let imageContainerView = UIView()
     private let imageView = UIImageView()
     private let nameLabel = UILabel()
     private let positionLabel = UILabel()
+    private let onlineIndicator = UIView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,25 +39,33 @@ class AuthorView: UIView {
         horizontalStackView.spacing = 20
         horizontalStackView.alignment = .center
         horizontalStackView.contentMode = .left
-        horizontalStackView.addArrangedSubview(imageView)
+        horizontalStackView.addArrangedSubview(imageContainerView)
         horizontalStackView.addArrangedSubview(verticalStackView)
         verticalStackView.axis = .vertical
         verticalStackView.spacing = 4
         verticalStackView.addArrangedSubview(nameLabel)
         verticalStackView.addArrangedSubview(positionLabel)
-        imageView.setDimensions(width: 40, height: 40)
+        imageContainerView.pinToEdges(subview: imageView)
+        imageContainerView.setDimensions(width: 40, height: 40)
+        imageContainerView.pinToEdges(subview: onlineIndicator, leading: nil, top: nil)
+        onlineIndicator.setDimensions(width: 10, height: 10)
         imageView.layer.cornerRadius = 20
         imageView.layer.masksToBounds = true
         imageView.contentMode = .scaleAspectFill
+        onlineIndicator.layer.cornerRadius = 5
+        onlineIndicator.layer.borderColor = UIColor.white.cgColor
+        onlineIndicator.layer.borderWidth = 1
+        onlineIndicator.backgroundColor = .appGreen
         nameLabel.font = UIFont(name: poppinsSemiBold, size: 16)
         nameLabel.textColor = .white
         positionLabel.font = UIFont(name: poppinsMedium, size: 10)
         positionLabel.textColor = .appGray
     }
     
-    func update(image: UIImage, name: String, position: String) {
+    func update(image: UIImage, name: String, position: String, isOnline: Bool) {
         imageView.image = image
         nameLabel.text = name
         positionLabel.text = position
+        onlineIndicator.isHidden = !isOnline
     }
 }
