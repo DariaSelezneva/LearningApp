@@ -184,9 +184,17 @@
 		4381CBDD280D845E005E1388 /* FollowClassViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4381CBDE280DB35D005E1388 /* Subviews */,
 				DA8D31C92809AFEC006E5B3F /* FollowClassViewController.swift */,
 			);
 			path = FollowClassViewController;
+			sourceTree = "<group>";
+		};
+		4381CBDE280DB35D005E1388 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		43878C9A2806D2B900ED092C /* ViewModel */ = {
@@ -332,8 +340,8 @@
 		438915562805BEA40070A2BD /* CourseDetails */ = {
 			isa = PBXGroup;
 			children = (
-				DA8D31BC28096739006E5B3F /* CourseDetailsViewController.swift */,
 				DA8D31C228096C5A006E5B3F /* Subviews */,
+				DA8D31BC28096739006E5B3F /* CourseDetailsViewController.swift */,
 			);
 			path = CourseDetails;
 			sourceTree = "<group>";
