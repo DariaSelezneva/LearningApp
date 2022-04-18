@@ -10,10 +10,18 @@ import UIKit
 
 struct UserViewModel {
     var name: String
-    var image: UIImage
+    var image: UIImage?
     var reward: Int?
     var isOnline: Bool
     var hasNotifications: Bool
-    
-    static let sample = UserViewModel(name: "Clara", image: UIImage(named: "clara")!, reward: 1600, isOnline: true, hasNotifications: true)
+}
+
+extension UserViewModel {
+    init(from user: User) {
+        self.name = user.name
+        self.image = user.image ?? UIImage(systemName: "person")!
+        self.reward = user.reward
+        self.isOnline = user.isOnline
+        self.hasNotifications = user.notifications.isEmpty
+    }
 }

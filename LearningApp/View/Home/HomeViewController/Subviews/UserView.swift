@@ -32,16 +32,18 @@ class UserView: UIView {
         self.pinToEdges(subview: commonStackView)
         commonStackView.axis = .horizontal
         commonStackView.distribution = .equalSpacing
+        commonStackView.alignment = .center
         commonStackView.addArrangedSubview(avatarAndLabelsStackView)
         commonStackView.addArrangedSubview(bellIndicatorView)
         avatarAndLabelsStackView.axis = .horizontal
         avatarAndLabelsStackView.alignment = .leading
         avatarAndLabelsStackView.spacing = 18
+        avatarAndLabelsStackView.alignment = .center
         avatarAndLabelsStackView.addArrangedSubview(avatarView)
         avatarAndLabelsStackView.addArrangedSubview(labelsStackView)
         avatarView.setDimensions(width: 40, height: 40)
         labelsStackView.axis = .vertical
-        labelsStackView.spacing = 8
+        labelsStackView.spacing = 4
         labelsStackView.addArrangedSubview(greetingLabel)
         labelsStackView.addArrangedSubview(rewardLabel)
         greetingLabel.textColor = .appDarkGray
@@ -50,7 +52,7 @@ class UserView: UIView {
     }
     
     func update(with user: UserViewModel) {
-        avatarView.update(image: user.image, isOnline: user.isOnline)
+        avatarView.update(image: user.image ?? UIImage(systemName: "person")!, isOnline: user.isOnline)
         greetingLabel.text = "Hello, \(user.name.capitalized)!"
         let hasReward = user.reward != nil
         let rewardString = NSMutableAttributedString(string: hasReward ? "   +\(user.reward!)" : "", attributes: [.font : UIFont(name: poppinsSemiBold, size: 14)!])

@@ -7,13 +7,18 @@
 
 import UIKit
 
-protocol CourseDetailsDisplayLogic {
+protocol CourseDetailsDisplayLogic: UIViewController {
     func display(_ courseDetails: CourseDetailsViewModel)
+    func displayFavorite(isFavorite: Bool)
 }
 
 class CourseDetailsViewController: UIViewController {
     
+    var interactor : CourseDetailsInteractionLogic?
+    var router : CourseDetailsRouter?
+    
     var videoURL: URL?
+    var courseID: Int?
     
     private let scrollView = UIScrollView()
     private let containerView = UIView()
@@ -86,10 +91,11 @@ class CourseDetailsViewController: UIViewController {
     private let lessonsTableView = LessonsTableView()
     private var lessonsTableViewHeightConstraint = NSLayoutConstraint()
     
-    private let followButton = UIButton()
+    private let followButton = FollowButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationBar()
         view.backgroundColor = .white
         view.pinToEdges(subview: scrollView)
         scrollView.setWidth(equalTo: view)
@@ -105,10 +111,34 @@ class CourseDetailsViewController: UIViewController {
         previewImageContainer.pinToEdges(subview: gradientView)
         previewImageContainer.alignToCenter(subview: playButton)
         authorView.nameColor = .appDarkGray
-        lessonsTableViewHeightConstraint = lessonsTableView.heightAnchor.constraint(equalToConstant: 0)
-        lessonsTableViewHeightConstraint.isActive = true
-        
-        display(CourseDetailsViewModel.firstSample)
+        view.pinToLayoutMargins(subview: followButton, top: nil, bottom: 8)
+        followButton.heightAnchor.constraint(equalToConstant: 64).isActive = true
+        followButton.text = "Follow class"
+        followButton.addTarget(self, action: #selector(didPressFollow(_:)), for: .touchUpInside)
+    }
+    
+    func setupNavigationBar() {
+        navigationController?.navigationBar.tintColor = .appRed
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: poppinsSemiBold, size: 18)!]
+        navigationItem.title = "Course Details"
+        self.navigationItem.setHidesBackButton(true, animated:false)
+        let containerView = UIView(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
+        imageView.image = UIImage(named: "Back button")
+        containerView.addSubview(imageView)
+        let backTap = UITapGestureRecognizer(target: self, action: #selector(backToMain))
+        containerView.addGestureRecognizer(backTap)
+        let leftBarButtonItem = UIBarButtonItem(customView: containerView)
+        self.navigationItem.leftBarButtonItem = leftBarButtonItem
+    }
+
+    @objc func backToMain() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func didPressLike() {
+        guard let courseID = courseID else { return }
+        interactor?.setFavorite(courseID: courseID)
     }
     
     @objc func didPressPlay(_ sender: UIButton) {
@@ -116,6 +146,12 @@ class CourseDetailsViewController: UIViewController {
         if let url = videoURL {
             // show player
         }
+    }
+    
+    @objc func didPressFollow(_ sender: UIButton) {
+        sender.animateScale(duration: 0.1, scale: 1.03)
+        guard let courseID = courseID else { return }
+        router?.showSchedule(courseID: courseID)
     }
     
     override func viewDidLayoutSubviews() {
@@ -130,10 +166,17 @@ extension CourseDetailsViewController: CourseDetailsDisplayLogic {
         previewImageView.image = courseDetails.previewImage
         titleLabel.text = courseDetails.title
         coloredLabelsView.update(lessonsQuantity: courseDetails.numberOfLessons, theme: courseDetails.theme, cost: courseDetails.cost)
-        descriptionLabel.text = "Some description\ntwo lines"
+        descriptionLabel.text = courseDetails.description
         authorView.update(image: courseDetails.authorImage, name: courseDetails.authorName, position: courseDetails.authorPosition, isOnline: courseDetails.isOnline)
-        lessonsTableView.update(with: courseDetails.lessons + courseDetails.lessons)
-        lessonsTableViewHeightConstraint.constant = CGFloat(100 * courseDetails.lessons.count * 2)
+        lessonsTableViewHeightConstraint = lessonsTableView.heightAnchor.constraint(equalToConstant: CGFloat(100 * courseDetails.lessons.count))
+        lessonsTableViewHeightConstraint.isActive = true
+        lessonsTableView.update(with: courseDetails.lessons)
+        courseID = courseDetails.id
         videoURL = courseDetails.videoURL
+    }
+    
+    func displayFavorite(isFavorite: Bool) {
+        let heartImageName = isFavorite ? "heart.fill" : "heart"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: heartImageName), landscapeImagePhone: UIImage(systemName: heartImageName), style: .plain, target: self, action: #selector(didPressLike))
     }
 }

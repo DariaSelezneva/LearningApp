@@ -10,11 +10,7 @@ import UIKit
 class CoursesFilterView: UIView {
     
     private var dataSource: [String] = []
-    private var selectedFilter: Int = 0 {
-        didSet {
-            collectionView.reloadData()
-        }
-    }
+    private var selectedFilter: Int = 0
     
     private lazy var collectionView: UICollectionView = {
         return UICollectionView(frame: CGRect.zero, collectionViewLayout: collectionViewLayout)
@@ -43,8 +39,9 @@ class CoursesFilterView: UIView {
         collectionView.register(FilterCollectionViewCell.self, forCellWithReuseIdentifier: FilterCollectionViewCell.reuseIdentifier)
     }
     
-    func update(with filters: [String]) {
+    func update(with filters: [String], selectedFilter: Int) {
         self.dataSource = filters
+        self.selectedFilter = selectedFilter
         collectionView.reloadData()
     }
 }
@@ -83,7 +80,6 @@ extension CoursesFilterView: UICollectionViewDelegateFlowLayout {
 
 extension CoursesFilterView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedFilter = indexPath.row
         onSelection?(dataSource[indexPath.row])
     }
 }

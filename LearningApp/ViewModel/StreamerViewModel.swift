@@ -11,22 +11,13 @@ struct StreamerViewModel {
     var id: Int
     var image: UIImage
     var isStreaming: Bool
-    
-    static let sample = [
-        StreamerViewModel(
-            id: 0,
-            image: UIImage(named: "eccleston")!,
-            isStreaming: true),
-        StreamerViewModel(
-            id: 1,
-            image: UIImage(named: "tennant")!,
-            isStreaming: true),
-        StreamerViewModel(
-            id: 2,
-            image: UIImage(named: "smith")!,
-            isStreaming: true),
-        StreamerViewModel(
-            id: 3,
-            image: UIImage(named: "capaldi")!,
-            isStreaming: true)]
+}
+
+
+extension StreamerViewModel {
+    init(from streamer: Streamer) {
+        self.id = streamer.person.id
+        self.image = streamer.person.image ?? UIImage(systemName: "person")!
+        self.isStreaming = streamer.isStreaming
+    }
 }

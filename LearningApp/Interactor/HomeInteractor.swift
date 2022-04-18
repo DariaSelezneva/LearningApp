@@ -10,34 +10,43 @@ import Foundation
 protocol HomeInteractionLogic {
     func getUser()
     func getStreamers()
+    func getFilters()
     func getCourses()
-    func didSelectStreamer(_ id: Int)
     func didSelectFilter(_ filter: String)
-    func didSelectCourse(_ id: Int)
 }
 
-class HomeInteractor: HomeInteractionLogic {
+final class HomeInteractor: HomeInteractionLogic {
+    
+    var dataStore : DataStore = DataStore.shared
+    var presenter : HomePresentationLogic?
+    
     func getUser() {
-        
+        if let user = dataStore.user {
+            presenter?.presentUser(user)
+        }
     }
     
     func getStreamers() {
-        
+        presenter?.presentStreamers(dataStore.streamers)
+    }
+    
+    func getFilters() {
+        presenter?.presentFilters(dataStore.filters, selectedFilter: 0)
     }
     
     func getCourses() {
-        
-    }
-    
-    func didSelectStreamer(_ id: Int) {
-        
+        presenter?.presentCourses(Course.sample)
     }
     
     func didSelectFilter(_ filter: String) {
-        
-    }
-    
-    func didSelectCourse(_ id: Int) {
-        
+        if filter == "All" {
+            presenter?.presentFilters(dataStore.filters, selectedFilter: 0)
+            presenter?.presentCourses(Course.sample)
+        }
+        else {
+            let filterIndex = Int(dataStore.filters.firstIndex(of: filter) ?? 0)
+            presenter?.presentFilters(dataStore.filters, selectedFilter: filterIndex)
+            presenter?.presentCourses(Course.sample.filter({$0.theme == filter}))
+        }
     }
 }

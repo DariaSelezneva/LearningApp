@@ -9,7 +9,7 @@ import UIKit
 
 class CoursesCollectionView: UIView {
     
-    private var dataSource: [CourseViewModel] = CourseViewModel.sample
+    private var dataSource: [CourseViewModel] = []
     private var highlightedCourseIndex: Int = 0 {
         didSet {
             collectionView.performBatchUpdates {

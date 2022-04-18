@@ -7,10 +7,10 @@
 
 import UIKit
 
-protocol HomeDisplayLogic {
+protocol HomeDisplayLogic: UIViewController {
     func displayUser(_ user: UserViewModel)
     func displayStreamers(_ streamers: [StreamerViewModel])
-    func displayCourseFilters(_ filters: [String])
+    func displayCourseFilters(_ filters: [String], selectedFilter: Int)
     func displayCourses(_ courses: [CourseViewModel])
 }
 
@@ -44,20 +44,15 @@ class HomeViewController: UIViewController {
         stackView.addArrangedSubview(coursesView)
         streamingView.heightAnchor.constraint(equalToConstant: 100).isActive = true
         coursesView.filterView.onSelection = { [unowned self] filter in
-            if filter == "All" {
-                displayCourses(CourseViewModel.sample)
-            }
-            else {
-                displayCourses(CourseViewModel.sample.filter({$0.theme == filter}))
-            }
+            interactor?.didSelectFilter(filter)
         }
         coursesView.coursesCollectionView.onSelection = { [unowned self] courseID in
-            interactor?.didSelectCourse(courseID)
+            router?.navigateToCourseDetails(courseID: courseID)
         }
-        displayUser(UserViewModel.sample)
-        displayStreamers(StreamerViewModel.sample)
-        displayCourseFilters(["All", "TARDIS", "Creatures", "Other"])
-        displayCourses(CourseViewModel.sample)
+        interactor?.getUser()
+        interactor?.getStreamers()
+        interactor?.getFilters()
+        interactor?.getCourses()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,8 +76,8 @@ extension HomeViewController: HomeDisplayLogic {
         streamingView.update(with: streamers)
     }
     
-    func displayCourseFilters(_ filters: [String]) {
-        coursesView.filterView.update(with: filters)
+    func displayCourseFilters(_ filters: [String], selectedFilter: Int) {
+        coursesView.filterView.update(with: filters, selectedFilter: selectedFilter)
     }
     
     func displayCourses(_ courses: [CourseViewModel]) {

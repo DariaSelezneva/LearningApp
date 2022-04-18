@@ -15,6 +15,18 @@
 		43635D3E280842DA00D633CA /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43635D3D280842DA00D633CA /* HomePresenter.swift */; };
 		43635D412808432E00D633CA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43635D402808432E00D633CA /* User.swift */; };
 		43635D43280843C400D633CA /* CourseDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43635D42280843C400D633CA /* CourseDetailsViewModel.swift */; };
+		4381CBC4280D4AEC005E1388 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381CBC3280D4AEC005E1388 /* DataStore.swift */; };
+		4381CBC6280D4B5A005E1388 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381CBC5280D4B5A005E1388 /* Course.swift */; };
+		4381CBC8280D4C19005E1388 /* Streamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381CBC7280D4C19005E1388 /* Streamer.swift */; };
+		4381CBCA280D4D36005E1388 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381CBC9280D4D36005E1388 /* Message.swift */; };
+		4381CBCC280D4D7C005E1388 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381CBCB280D4D7C005E1388 /* Person.swift */; };
+		4381CBCE280D534B005E1388 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381CBCD280D534B005E1388 /* Lesson.swift */; };
+		4381CBD1280D57EE005E1388 /* HomeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381CBD0280D57EE005E1388 /* HomeConfigurator.swift */; };
+		4381CBD3280D683C005E1388 /* CourseDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381CBD2280D683C005E1388 /* CourseDetailsInteractor.swift */; };
+		4381CBD5280D6B9C005E1388 /* CourseDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381CBD4280D6B9C005E1388 /* CourseDetailsPresenter.swift */; };
+		4381CBD7280D6D13005E1388 /* CourseDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381CBD6280D6D13005E1388 /* CourseDetailsConfigurator.swift */; };
+		4381CBD9280D6D81005E1388 /* CourseDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381CBD8280D6D81005E1388 /* CourseDetailsRouter.swift */; };
+		4381CBDB280D7E38005E1388 /* FollowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381CBDA280D7E38005E1388 /* FollowButton.swift */; };
 		43878C892806A2DE00ED092C /* StreamingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43878C882806A2DE00ED092C /* StreamingCollectionViewCell.swift */; };
 		43878C8B2806A2F900ED092C /* StreamingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43878C8A2806A2F900ED092C /* StreamingView.swift */; };
 		43878C8D2806A30B00ED092C /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43878C8C2806A30B00ED092C /* UserView.swift */; };
@@ -37,7 +49,6 @@
 		43878CBA280707B400ED092C /* UserAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43878CB9280707B400ED092C /* UserAvatarView.swift */; };
 		43878CBC280718B900ED092C /* CoursesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43878CBB280718B900ED092C /* CoursesCollectionView.swift */; };
 		4389153E2805B5EA0070A2BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4389153D2805B5EA0070A2BD /* AppDelegate.swift */; };
-		438915422805B5EA0070A2BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438915412805B5EA0070A2BD /* ViewController.swift */; };
 		438915472805B5EC0070A2BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 438915462805B5EC0070A2BD /* Assets.xcassets */; };
 		4389154A2805B5ED0070A2BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 438915482805B5ED0070A2BD /* LaunchScreen.storyboard */; };
 		438915532805BDCF0070A2BD /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438915522805BDCF0070A2BD /* MainTabBarController.swift */; };
@@ -65,6 +76,18 @@
 		43635D3D280842DA00D633CA /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		43635D402808432E00D633CA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		43635D42280843C400D633CA /* CourseDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsViewModel.swift; sourceTree = "<group>"; };
+		4381CBC3280D4AEC005E1388 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		4381CBC5280D4B5A005E1388 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		4381CBC7280D4C19005E1388 /* Streamer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Streamer.swift; sourceTree = "<group>"; };
+		4381CBC9280D4D36005E1388 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		4381CBCB280D4D7C005E1388 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		4381CBCD280D534B005E1388 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
+		4381CBD0280D57EE005E1388 /* HomeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConfigurator.swift; sourceTree = "<group>"; };
+		4381CBD2280D683C005E1388 /* CourseDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsInteractor.swift; sourceTree = "<group>"; };
+		4381CBD4280D6B9C005E1388 /* CourseDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsPresenter.swift; sourceTree = "<group>"; };
+		4381CBD6280D6D13005E1388 /* CourseDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsConfigurator.swift; sourceTree = "<group>"; };
+		4381CBD8280D6D81005E1388 /* CourseDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsRouter.swift; sourceTree = "<group>"; };
+		4381CBDA280D7E38005E1388 /* FollowButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowButton.swift; sourceTree = "<group>"; };
 		43878C882806A2DE00ED092C /* StreamingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingCollectionViewCell.swift; sourceTree = "<group>"; };
 		43878C8A2806A2F900ED092C /* StreamingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingView.swift; sourceTree = "<group>"; };
 		43878C8C2806A30B00ED092C /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
@@ -88,7 +111,6 @@
 		43878CBB280718B900ED092C /* CoursesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesCollectionView.swift; sourceTree = "<group>"; };
 		4389153A2805B5EA0070A2BD /* LearningApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4389153D2805B5EA0070A2BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		438915412805B5EA0070A2BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		438915462805B5EC0070A2BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		438915492805B5ED0070A2BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4389154B2805B5ED0070A2BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -103,7 +125,7 @@
 		DA8D31C3280985AC006E5B3F /* LessonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonTableViewCell.swift; sourceTree = "<group>"; };
 		DA8D31C5280993F8006E5B3F /* LessonPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonPlayView.swift; sourceTree = "<group>"; };
 		DA8D31C72809AAB9006E5B3F /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeRouter.swift; path = LearningApp/View/Home/CourseDetails/Subviews/HomeRouter.swift; sourceTree = SOURCE_ROOT; };
-		DA8D31C92809AFEC006E5B3F /* FollowClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FollowClassViewController.swift; path = LearningApp/View/Home/CourseDetails/Subviews/FollowClassViewController.swift; sourceTree = SOURCE_ROOT; };
+		DA8D31C92809AFEC006E5B3F /* FollowClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FollowClassViewController.swift; path = LearningApp/View/Home/FollowClassViewController/FollowClassViewController.swift; sourceTree = SOURCE_ROOT; };
 		DAC9D81828095096009929E9 /* e_UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_UIColor.swift; sourceTree = "<group>"; };
 		DAC9D81A28095160009929E9 /* LessonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +145,11 @@
 			isa = PBXGroup;
 			children = (
 				43635D402808432E00D633CA /* User.swift */,
+				4381CBC5280D4B5A005E1388 /* Course.swift */,
+				4381CBCD280D534B005E1388 /* Lesson.swift */,
+				4381CBCB280D4D7C005E1388 /* Person.swift */,
+				4381CBC7280D4C19005E1388 /* Streamer.swift */,
+				4381CBC9280D4D36005E1388 /* Message.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -131,8 +158,35 @@
 			isa = PBXGroup;
 			children = (
 				DA8D31C72809AAB9006E5B3F /* HomeRouter.swift */,
+				4381CBD8280D6D81005E1388 /* CourseDetailsRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		4381CBCF280D57DD005E1388 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				4381CBD0280D57EE005E1388 /* HomeConfigurator.swift */,
+				4381CBD6280D6D13005E1388 /* CourseDetailsConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		4381CBDC280D8440005E1388 /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				438915552805BE980070A2BD /* Subviews */,
+				4389155D2805BF850070A2BD /* HomeViewController.swift */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		4381CBDD280D845E005E1388 /* FollowClassViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DA8D31C92809AFEC006E5B3F /* FollowClassViewController.swift */,
+			);
+			path = FollowClassViewController;
 			sourceTree = "<group>";
 		};
 		43878C9A2806D2B900ED092C /* ViewModel */ = {
@@ -151,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				43878CA12806D43D00ED092C /* HomeInteractor.swift */,
+				4381CBD2280D683C005E1388 /* CourseDetailsInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -159,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				43635D3D280842DA00D633CA /* HomePresenter.swift */,
+				4381CBD4280D6B9C005E1388 /* CourseDetailsPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -166,6 +222,7 @@
 		43878CA02806D35900ED092C /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				4381CBC3280D4AEC005E1388 /* DataStore.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -213,7 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				4389153D2805B5EA0070A2BD /* AppDelegate.swift */,
-				438915412805B5EA0070A2BD /* ViewController.swift */,
+				4381CBCF280D57DD005E1388 /* Configurator */,
 				438915512805B8820070A2BD /* View */,
 				43878C9D2806D32B00ED092C /* Interactor */,
 				43878C9F2806D34A00ED092C /* Presenter */,
@@ -246,9 +303,9 @@
 		438915542805BE000070A2BD /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				4389155D2805BF850070A2BD /* HomeViewController.swift */,
-				438915552805BE980070A2BD /* Subviews */,
+				4381CBDC280D8440005E1388 /* HomeViewController */,
 				438915562805BEA40070A2BD /* CourseDetails */,
+				4381CBDD280D845E005E1388 /* FollowClassViewController */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -275,19 +332,10 @@
 		438915562805BEA40070A2BD /* CourseDetails */ = {
 			isa = PBXGroup;
 			children = (
-				438915572805BEDE0070A2BD /* FollowClassModal */,
 				DA8D31BC28096739006E5B3F /* CourseDetailsViewController.swift */,
 				DA8D31C228096C5A006E5B3F /* Subviews */,
 			);
 			path = CourseDetails;
-			sourceTree = "<group>";
-		};
-		438915572805BEDE0070A2BD /* FollowClassModal */ = {
-			isa = PBXGroup;
-			children = (
-				DA8D31C92809AFEC006E5B3F /* FollowClassViewController.swift */,
-			);
-			path = FollowClassModal;
 			sourceTree = "<group>";
 		};
 		438915582805BF140070A2BD /* Messages */ = {
@@ -330,6 +378,7 @@
 				DA8D31C028096BBD006E5B3F /* LessonsTableView.swift */,
 				DA8D31C3280985AC006E5B3F /* LessonTableViewCell.swift */,
 				DA8D31C5280993F8006E5B3F /* LessonPlayView.swift */,
+				4381CBDA280D7E38005E1388 /* FollowButton.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -413,24 +462,34 @@
 				43878C9C2806D2E900ED092C /* StreamerViewModel.swift in Sources */,
 				DAC9D81928095096009929E9 /* e_UIColor.swift in Sources */,
 				43635D3E280842DA00D633CA /* HomePresenter.swift in Sources */,
+				4381CBCE280D534B005E1388 /* Lesson.swift in Sources */,
 				43635D412808432E00D633CA /* User.swift in Sources */,
 				438915602805BF990070A2BD /* MessagesViewController.swift in Sources */,
 				DA8D31C4280985AC006E5B3F /* LessonTableViewCell.swift in Sources */,
 				43878C8B2806A2F900ED092C /* StreamingView.swift in Sources */,
+				4381CBD3280D683C005E1388 /* CourseDetailsInteractor.swift in Sources */,
 				DA8D31C128096BBD006E5B3F /* LessonsTableView.swift in Sources */,
+				4381CBC8280D4C19005E1388 /* Streamer.swift in Sources */,
 				43635D382808106F00D633CA /* ColoredLabel.swift in Sources */,
+				4381CBD5280D6B9C005E1388 /* CourseDetailsPresenter.swift in Sources */,
 				43878C892806A2DE00ED092C /* StreamingCollectionViewCell.swift in Sources */,
 				43878C8F2806A34200ED092C /* CourseCollectionViewCell.swift in Sources */,
 				4389155E2805BF850070A2BD /* HomeViewController.swift in Sources */,
+				4381CBCC280D4D7C005E1388 /* Person.swift in Sources */,
 				43635D36280809F400D633CA /* GradientView.swift in Sources */,
+				4381CBC4280D4AEC005E1388 /* DataStore.swift in Sources */,
+				4381CBCA280D4D36005E1388 /* Message.swift in Sources */,
 				43878CB32806F97600ED092C /* Fonts.swift in Sources */,
 				DAC9D81B28095160009929E9 /* LessonViewModel.swift in Sources */,
+				4381CBDB280D7E38005E1388 /* FollowButton.swift in Sources */,
 				DA8D31CA2809AFEC006E5B3F /* FollowClassViewController.swift in Sources */,
 				43878C972806C4D400ED092C /* e_UIView.swift in Sources */,
 				43878C952806A3A100ED092C /* FilterCollectionViewCell.swift in Sources */,
 				43878CBC280718B900ED092C /* CoursesCollectionView.swift in Sources */,
+				4381CBD9280D6D81005E1388 /* CourseDetailsRouter.swift in Sources */,
 				4389155C2805BF690070A2BD /* ExploreViewController.swift in Sources */,
-				438915422805B5EA0070A2BD /* ViewController.swift in Sources */,
+				4381CBD1280D57EE005E1388 /* HomeConfigurator.swift in Sources */,
+				4381CBD7280D6D13005E1388 /* CourseDetailsConfigurator.swift in Sources */,
 				DA8D31BF2809682F006E5B3F /* ColoredLabelsView.swift in Sources */,
 				43635D3C28081BAB00D633CA /* PaginationIndicatorView.swift in Sources */,
 				43878C8D2806A30B00ED092C /* UserView.swift in Sources */,
@@ -444,6 +503,7 @@
 				4389153E2805B5EA0070A2BD /* AppDelegate.swift in Sources */,
 				43878CA22806D43D00ED092C /* HomeInteractor.swift in Sources */,
 				43635D3A2808137000D633CA /* CourseInfoView.swift in Sources */,
+				4381CBC6280D4B5A005E1388 /* Course.swift in Sources */,
 				438915532805BDCF0070A2BD /* MainTabBarController.swift in Sources */,
 				43878CA62806F01E00ED092C /* CourseViewModel.swift in Sources */,
 				DA8D31BD28096739006E5B3F /* CourseDetailsViewController.swift in Sources */,

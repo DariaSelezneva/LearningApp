@@ -10,6 +10,7 @@ import UIKit
 struct CourseDetailsViewModel {
     var id: Int
     var title: String
+    var description: String
     var previewImage: UIImage?
     var videoURL: URL?
     var duration: String
@@ -22,52 +23,28 @@ struct CourseDetailsViewModel {
     var isOnline: Bool
     var lessons: [LessonViewModel]
     var extras: String?
-    
-    static let firstSample = CourseDetailsViewModel(
-        id: 0,
-        title: "TARDIS and wibbly-wobbly timey-wimey stuff for beginners",
-        previewImage: UIImage(named: "tardis")!,
-        videoURL: nil,
-        duration: "5h 21m",
-        numberOfLessons: "6 lessons",
-        theme: "TARDIS",
-        cost: "Free",
-        authorName: "Marta Jones",
-        authorImage: UIImage(named: "marta")!,
-        authorPosition: "Doctor companion",
-        isOnline: true,
-        lessons: LessonViewModel.sample,
-        extras: "Free e-book")
-    
-    static let secondSample = CourseDetailsViewModel(
-        id: 1,
-        title: "100 ways to kill time when you are immortal",
-        previewImage: UIImage(named: "knitting")!,
-        videoURL: nil,
-        duration: "4h 45m",
-        numberOfLessons: "10 lessons",
-        theme: "Other",
-        cost: "$40",
-        authorName: "Rory Williams",
-        authorImage: UIImage(named: "rory")!,
-        authorPosition: "Doctor companion",
-        isOnline: false,
-        lessons: [])
-    
-    static let thirdSample = CourseDetailsViewModel(
-        id: 2,
-        title: "Daleks and how to fight them",
-        previewImage: UIImage(named: "dalek")!,
-        videoURL: nil,
-        duration: "2h 20m",
-        numberOfLessons: "4 lessons",
-        theme: "Creatures",
-        cost: "$20",
-        authorName: "Rose Tyler",
-        authorImage: UIImage(named: "rose")!,
-        authorPosition: "Doctor companion",
-        isOnline: false,
-        lessons: [])
-    
-    static let sample = [firstSample, secondSample, thirdSample]
+    var isFavorite: Bool
+}
+
+extension CourseDetailsViewModel {
+    init(from course: Course, isFavorite: Bool) {
+        self.id = course.id
+        self.title = course.title
+        self.description = course.description
+        self.previewImage = course.previewImage
+        self.videoURL = course.videoURL
+        let hours = course.duration / 60
+        let minutes = course.duration % 60
+        self.duration = "\(hours)h \(minutes)m"
+        self.numberOfLessons = "\(course.numberOfLessons) lessons"
+        self.theme = course.theme
+        self.cost = course.cost == 0 ? "Free" : "\(course.currency)\(course.cost)"
+        self.authorName = course.author.name
+        self.authorImage = course.author.image ?? UIImage(systemName: "person")!
+        self.authorPosition = course.author.position
+        self.isOnline = course.author.isOnline
+        self.extras = course.extras
+        self.lessons = course.lessons
+        self.isFavorite = isFavorite
+    }
 }

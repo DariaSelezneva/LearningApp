@@ -9,7 +9,7 @@ import UIKit
 
 class StreamingView: UIView {
     
-    private var dataSource: [StreamerViewModel] = StreamerViewModel.sample
+    private var dataSource: [StreamerViewModel] = []
     
     lazy var collectionView: UICollectionView = {
             return UICollectionView(frame: CGRect.zero, collectionViewLayout: collectionViewLayout)

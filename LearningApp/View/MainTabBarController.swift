@@ -16,6 +16,7 @@ class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        HomeConfigurator.shared.configure(viewController: homeVC)
         homeVC.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "Menu"), selectedImage: UIImage(named: "Menu_fill"))
         exploreVC.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "Discovery"), selectedImage: UIImage(named: "Discovery"))
         messagesVC.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "Message"), selectedImage: UIImage(named: "Message_fill"))
