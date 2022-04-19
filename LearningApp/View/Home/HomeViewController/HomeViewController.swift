@@ -69,7 +69,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: HomeDisplayLogic {
     
     func displayUser(_ user: UserViewModel) {
-        userView.update(with: user)
+        userView.updateForHomeScreen(with: user)
     }
     
     func displayStreamers(_ streamers: [StreamerViewModel]) {

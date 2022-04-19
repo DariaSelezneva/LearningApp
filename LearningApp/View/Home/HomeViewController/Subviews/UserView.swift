@@ -14,8 +14,8 @@ class UserView: UIView {
     private let labelsStackView = UIStackView()
     
     private let avatarView = UserAvatarView()
-    private let greetingLabel = UILabel.make(fontName: poppinsBold, size: 16, textColor: .appDarkGray)
-    private let rewardLabel = UILabel()
+    private let primaryLabel = UILabel.make(fontName: poppinsBold, size: 16, textColor: .appDarkGray)
+    private let secondaryLabel = UILabel()
     
     private let bellIndicatorView = BellIndicatorView()
 
@@ -44,14 +44,13 @@ class UserView: UIView {
         avatarView.setDimensions(width: 40, height: 40)
         labelsStackView.axis = .vertical
         labelsStackView.spacing = 4
-        labelsStackView.addArrangedSubview(greetingLabel)
-        labelsStackView.addArrangedSubview(rewardLabel)
-        rewardLabel.textColor = .appYellow
+        labelsStackView.addArrangedSubview(primaryLabel)
+        labelsStackView.addArrangedSubview(secondaryLabel)
     }
     
-    func update(with user: UserViewModel) {
+    func updateForHomeScreen(with user: UserViewModel) {
         avatarView.update(image: user.image ?? UIImage(systemName: "person")!, isOnline: user.isOnline)
-        greetingLabel.text = "Hello, \(user.name.capitalized)!"
+        primaryLabel.text = "Hello, \(user.name.capitalized)!"
         let hasReward = user.reward != nil
         let rewardString = NSMutableAttributedString(string: hasReward ? "   +\(user.reward!)" : "", attributes: [.font : UIFont(name: poppinsSemiBold, size: 14)!])
         let pointsString = NSMutableAttributedString(string: " Points", attributes: [.font : UIFont(name: poppinsRegular, size: 14)!])
@@ -60,8 +59,17 @@ class UserView: UIView {
         imageAttachment.image = UIImage(named: "Reward")
         imageAttachment.bounds = CGRect(x: 0, y: -2, width: 10, height: 15)
         rewardString.insert(NSAttributedString(attachment: imageAttachment), at: 0)
-        rewardLabel.attributedText = rewardString
-        rewardLabel.isHidden = !hasReward
+        secondaryLabel.attributedText = rewardString
+        secondaryLabel.isHidden = !hasReward
+        secondaryLabel.textColor = .appYellow
+        bellIndicatorView.update(showsIndicator: user.hasNotifications)
+    }
+    
+    func updateForMessages(with user: UserViewModel) {
+        avatarView.update(image: user.image ?? UIImage(systemName: "person")!, isOnline: user.isOnline)
+        primaryLabel.text = "My messages"
+        secondaryLabel.textColor = .appLightGray
+        secondaryLabel.font = UIFont(name: poppinsRegular, size: 14)
         bellIndicatorView.update(showsIndicator: user.hasNotifications)
     }
 }

@@ -32,6 +32,7 @@
 		43657B0D280EE7EC005DB313 /* DismissAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43657B0C280EE7EC005DB313 /* DismissAnimation.swift */; };
 		43657B0F280EEA34005DB313 /* TransitionDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43657B0E280EEA34005DB313 /* TransitionDriver.swift */; };
 		43657B11280EEB4B005DB313 /* CGPoint+Velocity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43657B10280EEB4B005DB313 /* CGPoint+Velocity.swift */; };
+		43657B14280F05F1005DB313 /* MessageListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43657B13280F05F1005DB313 /* MessageListViewModel.swift */; };
 		4381CBC4280D4AEC005E1388 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381CBC3280D4AEC005E1388 /* DataStore.swift */; };
 		4381CBC6280D4B5A005E1388 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381CBC5280D4B5A005E1388 /* Course.swift */; };
 		4381CBC8280D4C19005E1388 /* Streamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381CBC7280D4C19005E1388 /* Streamer.swift */; };
@@ -110,6 +111,7 @@
 		43657B0C280EE7EC005DB313 /* DismissAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissAnimation.swift; sourceTree = "<group>"; };
 		43657B0E280EEA34005DB313 /* TransitionDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionDriver.swift; sourceTree = "<group>"; };
 		43657B10280EEB4B005DB313 /* CGPoint+Velocity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Velocity.swift"; sourceTree = "<group>"; };
+		43657B13280F05F1005DB313 /* MessageListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListViewModel.swift; sourceTree = "<group>"; };
 		4381CBC3280D4AEC005E1388 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		4381CBC5280D4B5A005E1388 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		4381CBC7280D4C19005E1388 /* Streamer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Streamer.swift; sourceTree = "<group>"; };
@@ -209,6 +211,13 @@
 			path = Modal;
 			sourceTree = "<group>";
 		};
+		43657B12280F02EA005DB313 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		4381CBCF280D57DD005E1388 /* Configurator */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +267,7 @@
 				43635D42280843C400D633CA /* CourseDetailsViewModel.swift */,
 				DAC9D81A28095160009929E9 /* LessonViewModel.swift */,
 				43657AFD280EAA0B005DB313 /* ScheduleViewModel.swift */,
+				43657B13280F05F1005DB313 /* MessageListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -404,6 +414,7 @@
 		438915582805BF140070A2BD /* Messages */ = {
 			isa = PBXGroup;
 			children = (
+				43657B12280F02EA005DB313 /* Subviews */,
 				4389155F2805BF990070A2BD /* MessagesViewController.swift */,
 			);
 			path = Messages;
@@ -546,6 +557,7 @@
 				43657B04280ED4AF005DB313 /* ScheduleStatusView.swift in Sources */,
 				4381CBD5280D6B9C005E1388 /* CourseDetailsPresenter.swift in Sources */,
 				43878C892806A2DE00ED092C /* StreamingCollectionViewCell.swift in Sources */,
+				43657B14280F05F1005DB313 /* MessageListViewModel.swift in Sources */,
 				43657B06280ED9E9005DB313 /* e_UIViewController.swift in Sources */,
 				43878C8F2806A34200ED092C /* CourseCollectionViewCell.swift in Sources */,
 				4389155E2805BF850070A2BD /* HomeViewController.swift in Sources */,

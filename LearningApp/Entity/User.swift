@@ -29,5 +29,5 @@ struct User {
         courses: [],
         favoriteCourses: [Course.sample[0].id],
         notifications: ["New notification"],
-        messages: [])
+        messages: Message.sample)
 }

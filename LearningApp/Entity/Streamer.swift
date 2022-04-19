@@ -12,9 +12,9 @@ struct Streamer {
     var isStreaming: Bool
     
     static let sample = [
-        Streamer(person: Person(id: 0, name: "Doctor", image: UIImage(named: "eccleston"), position: "9th", isOnline: true), isStreaming: true),
-        Streamer(person: Person(id: 1, name: "Doctor", image: UIImage(named: "tennant"), position: "10th", isOnline: true), isStreaming: true),
-        Streamer(person: Person(id: 2, name: "Doctor", image: UIImage(named: "smith"), position: "11th", isOnline: true), isStreaming: true),
-        Streamer(person: Person(id: 3, name: "Doctor", image: UIImage(named: "capaldi"), position: "12th", isOnline: true), isStreaming: true)
+        Streamer(person: Person.rose, isStreaming: true),
+        Streamer(person: Person.rory, isStreaming: true),
+        Streamer(person: Person.capaldi, isStreaming: true),
+        Streamer(person: Person.marta, isStreaming: true)
     ]
 }

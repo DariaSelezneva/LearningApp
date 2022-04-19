@@ -13,6 +13,7 @@ struct UserViewModel {
     var image: UIImage?
     var reward: Int?
     var isOnline: Bool
+    var newMessagesCount: String
     var hasNotifications: Bool
 }
 
@@ -22,6 +23,9 @@ extension UserViewModel {
         self.image = user.image ?? UIImage(systemName: "person")!
         self.reward = user.reward
         self.isOnline = user.isOnline
+        let newMessagesCount = user.messages.filter({!$0.isRead}).count
+        let newMessagesCountString = newMessagesCount == 0 ? "No" : String(newMessagesCount)
+        self.newMessagesCount = "\(newMessagesCountString) new messages"
         self.hasNotifications = user.notifications.isEmpty
     }
 }

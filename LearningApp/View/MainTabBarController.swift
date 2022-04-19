@@ -24,6 +24,7 @@ class MainTabBarController: UITabBarController {
         viewControllers = [UINavigationController(rootViewController: homeVC), exploreVC, messagesVC, userVC]
         tabBar.backgroundColor = .white
         tabBar.tintColor = UIColor.appRed
+        tabBar.unselectedItemTintColor = UIColor.appTabGray
         tabBar.dropShadow(color: .black, height: -3, shadowRadius: 10, opacity: 0.08, cornerRadius: 0)
     }
 }
