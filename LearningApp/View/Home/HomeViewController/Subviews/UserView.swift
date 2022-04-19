@@ -14,7 +14,7 @@ class UserView: UIView {
     private let labelsStackView = UIStackView()
     
     private let avatarView = UserAvatarView()
-    private let greetingLabel = UILabel()
+    private let greetingLabel = UILabel.make(fontName: poppinsBold, size: 16, textColor: .appDarkGray)
     private let rewardLabel = UILabel()
     
     private let bellIndicatorView = BellIndicatorView()
@@ -46,8 +46,6 @@ class UserView: UIView {
         labelsStackView.spacing = 4
         labelsStackView.addArrangedSubview(greetingLabel)
         labelsStackView.addArrangedSubview(rewardLabel)
-        greetingLabel.textColor = .appDarkGray
-        greetingLabel.font = UIFont(name: poppinsBold, size: 16)
         rewardLabel.textColor = .appYellow
     }
     

@@ -29,7 +29,7 @@ class FilterCollectionViewCell: UICollectionViewCell {
     }
     
     func update(text: String, isSelected: Bool) {
-        contentView.backgroundColor = isSelected ? .appRed : .appLightGray
+        contentView.backgroundColor = isSelected ? .appRed : .appLightGray2
         label.textColor = isSelected ? .white : .appGray
         label.text = text
     }

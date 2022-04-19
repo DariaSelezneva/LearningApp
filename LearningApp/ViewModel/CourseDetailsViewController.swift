@@ -23,70 +23,34 @@ class CourseDetailsViewController: UIViewController {
     private let scrollView = UIScrollView()
     private let containerView = UIView()
     
+    private let coursePreview = CoursePreview()
+    
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 20
-        stackView.alignment = .leading
-        stackView.distribution = .equalSpacing
-        stackView.addArrangedSubview(previewImageContainer)
+        stackView.addArrangedSubview(coursePreview)
         stackView.addArrangedSubview(titleLabel)
-        stackView.addArrangedSubview(coloredLabelsView)
-        stackView.addArrangedSubview(descriptionLabel)
+        let additionalStackView = UIStackView()
+        additionalStackView.axis = .vertical
+        additionalStackView.spacing = 10
+        additionalStackView.alignment = .leading
+        additionalStackView.addArrangedSubview(coloredLabelsView)
+        additionalStackView.addArrangedSubview(descriptionLabel)
+        stackView.addArrangedSubview(additionalStackView)
         stackView.addArrangedSubview(authorView)
         return stackView
     }()
     
-    private let previewImageContainer: UIView = {
-        let container = UIView()
-        return container
-        
-    }()
-    
-    private let previewImageView: UIImageView = {
-        let previewImageView = UIImageView()
-        previewImageView.layer.cornerRadius = 24
-        previewImageView.clipsToBounds = true
-        previewImageView.contentMode = .scaleAspectFill
-        return previewImageView
-    }()
-    
-    private lazy var playButton: UIButton = {
-        let playButton = UIButton()
-        playButton.setDimensions(width: 72, height: 72)
-        let transparentView = UIView()
-        playButton.pinToEdges(subview: transparentView)
-        transparentView.layer.cornerRadius = 36
-        transparentView.backgroundColor = UIColor.white.withAlphaComponent(0.4)
-        transparentView.isUserInteractionEnabled = false
-        let config = UIImage.SymbolConfiguration(pointSize: 54, weight: .regular, scale: .default)
-        playButton.setImage(UIImage(systemName: "play.circle.fill", withConfiguration: config), for: .normal)
-        playButton.tintColor = .white
-        playButton.addTarget(self, action: #selector(didPressPlay(_:)), for: .touchUpInside)
-        return playButton
-    }()
-    
-    private lazy var titleLabel: UILabel = {
-        let titleLabel = UILabel()
-        titleLabel.font = UIFont(name: poppinsSemiBold, size: 24)
-        titleLabel.textColor = .appDarkGray
-        titleLabel.numberOfLines = 0
-        return titleLabel
-    }()
+    private let titleLabel = UILabel.make(fontName: poppinsSemiBold, size: 24, textColor: .appDarkGray)
     
     private let coloredLabelsView = ColoredLabelsView()
     
-    private let descriptionLabel: UILabel = {
-        let descriptionLabel = UILabel()
-        descriptionLabel.font = UIFont(name: poppinsRegular, size: 14)
-        descriptionLabel.textColor = .appGray
-        descriptionLabel.numberOfLines = 0
-        return descriptionLabel
-    }()
+    private let descriptionLabel = UILabel.make(fontName: poppinsRegular, size: 14, textColor: .appGray)
     
     private let authorView = AuthorView()
-    private let durationLabel = UILabel()
-    private let extrasLabel = ColoredLabel()
+    private let durationLabel = UILabel.make(fontName: poppinsMedium, size: 10, textColor: .appGray2)
+    private let extrasLabel = ColoredLabel.makeForExtras()
     
     private let lessonsTableView = LessonsTableView()
     private var lessonsTableViewHeightConstraint = NSLayoutConstraint()
@@ -105,11 +69,18 @@ class CourseDetailsViewController: UIViewController {
         stackView.topAnchor.constraint(equalTo: containerView.layoutMarginsGuide.topAnchor, constant: 20).isActive = true
         containerView.pinToEdges(subview: lessonsTableView, leading: 20, trailing: 20, top: nil, bottom: 16)
         lessonsTableView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 16).isActive = true
-        previewImageContainer.heightAnchor.constraint(equalToConstant: 230).isActive = true
-        previewImageContainer.pinToEdges(subview: previewImageView)
-        let gradientView = GradientView()
-        previewImageContainer.pinToEdges(subview: gradientView)
-        previewImageContainer.alignToCenter(subview: playButton)
+        coursePreview.setWidth(equalTo: stackView)
+        coursePreview.heightAnchor.constraint(equalToConstant: 230).isActive = true
+        let durationExtrasStackView = UIStackView()
+        containerView.addSubview(durationExtrasStackView)
+        durationExtrasStackView.translatesAutoresizingMaskIntoConstraints = false
+        durationExtrasStackView.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -20).isActive = true
+        durationExtrasStackView.bottomAnchor.constraint(equalTo: authorView.bottomAnchor).isActive = true
+        durationExtrasStackView.axis = .vertical
+        durationExtrasStackView.alignment = .trailing
+        durationExtrasStackView.spacing = 12
+        durationExtrasStackView.addArrangedSubview(durationLabel)
+        durationExtrasStackView.addArrangedSubview(extrasLabel)
         authorView.nameColor = .appDarkGray
         view.pinToLayoutMargins(subview: followButton, top: nil, bottom: 8)
         followButton.heightAnchor.constraint(equalToConstant: 64).isActive = true
@@ -141,13 +112,6 @@ class CourseDetailsViewController: UIViewController {
         interactor?.setFavorite(courseID: courseID)
     }
     
-    @objc func didPressPlay(_ sender: UIButton) {
-        sender.animateScale(duration: 0.1, scale: 1.1)
-        if let url = videoURL {
-            // show player
-        }
-    }
-    
     @objc func didPressFollow(_ sender: UIButton) {
         sender.animateScale(duration: 0.1, scale: 1.03)
         guard let courseID = courseID else { return }
@@ -156,18 +120,20 @@ class CourseDetailsViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        previewImageContainer.dropShadow(color: .black, height: 3, shadowRadius: 10, opacity: 0.4, cornerRadius: 24)
+        coursePreview.dropShadow(color: .black, height: 3, shadowRadius: 10, opacity: 0.4, cornerRadius: 24)
     }
 }
 
 extension CourseDetailsViewController: CourseDetailsDisplayLogic {
     
     func display(_ courseDetails: CourseDetailsViewModel) {
-        previewImageView.image = courseDetails.previewImage
+        coursePreview.image = courseDetails.previewImage
         titleLabel.text = courseDetails.title
         coloredLabelsView.update(lessonsQuantity: courseDetails.numberOfLessons, theme: courseDetails.theme, cost: courseDetails.cost)
         descriptionLabel.text = courseDetails.description
         authorView.update(image: courseDetails.authorImage, name: courseDetails.authorName, position: courseDetails.authorPosition, isOnline: courseDetails.isOnline)
+        durationLabel.updateForCourseDuration(courseDetails.duration)
+        extrasLabel.text = courseDetails.extras
         lessonsTableViewHeightConstraint = lessonsTableView.heightAnchor.constraint(equalToConstant: CGFloat(100 * courseDetails.lessons.count))
         lessonsTableViewHeightConstraint.isActive = true
         lessonsTableView.update(with: courseDetails.lessons)

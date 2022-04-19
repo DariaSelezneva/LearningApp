@@ -10,7 +10,9 @@ import UIKit
 extension UIColor {
     static let appDarkGray = UIColor(named: "darkGray")
     static let appGray = UIColor(named: "gray")
+    static let appGray2 = UIColor(named: "gray2")
     static let appLightGray = UIColor(named: "lightGray")
+    static let appLightGray2 = UIColor(named: "lightGray2")
     static let appRed = UIColor(named: "red")
     static let appYellow = UIColor(named: "yellow")
     static let appBlue = UIColor(named: "blue")

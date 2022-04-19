@@ -33,6 +33,16 @@ class ColoredLabel: UIView {
         }
     }
     
+    static func makeForExtras() -> ColoredLabel {
+        let extrasLabel = ColoredLabel()
+        extrasLabel.textInsets = UIEdgeInsets(top: 4, left: 12, bottom: 4, right: 12)
+        extrasLabel.backgroundColor = .appYellow
+        extrasLabel.layer.cornerRadius = 10
+        extrasLabel.textColor = .white
+        extrasLabel.font = UIFont(name: poppinsMedium, size: 10)
+        return extrasLabel
+    }
+    
     private let label = UILabel()
     
     override init(frame: CGRect) {

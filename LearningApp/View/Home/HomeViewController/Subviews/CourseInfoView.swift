@@ -12,8 +12,8 @@ class CourseInfoView: UIView {
     private let commonStackView = UIStackView()
     private let coloredLabelsView = ColoredLabelsView()
     private let titleDurationStackView = UIStackView()
-    private let courseTitleLabel = UILabel()
-    private let durationLabel = UILabel()
+    private let courseTitleLabel = UILabel.make(fontName: poppinsSemiBold, size: 18, textColor: .white)
+    private let durationLabel = UILabel.make(fontName: poppinsMedium, size: 10, textColor: .appGray2)
     
     
     override init(frame: CGRect) {
@@ -36,22 +36,11 @@ class CourseInfoView: UIView {
         titleDurationStackView.spacing = 4
         titleDurationStackView.addArrangedSubview(courseTitleLabel)
         titleDurationStackView.addArrangedSubview(durationLabel)
-        courseTitleLabel.numberOfLines = 3
-        courseTitleLabel.lineBreakMode = .byTruncatingTail
-        courseTitleLabel.font = UIFont(name: poppinsSemiBold, size: 18)
-        courseTitleLabel.textColor = .white
-        durationLabel.font = UIFont(name: poppinsMedium, size: 10)
-        durationLabel.textColor = .appGray
     }
      
     func update(with course: CourseViewModel) {
         courseTitleLabel.text = course.title
-        let imageAttachment = NSTextAttachment()
-        imageAttachment.image = UIImage(systemName: "stopwatch")?.withTintColor(.appGray!)
-        imageAttachment.bounds = CGRect(x: 0, y: -2, width: 12, height: 12)
-        let durationString = NSMutableAttributedString(string: "  " + course.duration)
-        durationString.insert(NSAttributedString(attachment: imageAttachment), at: 0)
-        durationLabel.attributedText = durationString
+        durationLabel.updateForCourseDuration(course.duration)
         coloredLabelsView.update(lessonsQuantity: course.numberOfLessons, theme: course.theme, cost: course.cost)
     }
 }

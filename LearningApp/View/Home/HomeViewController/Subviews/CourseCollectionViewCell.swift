@@ -13,14 +13,14 @@ class CourseCollectionViewCell: UICollectionViewCell {
     
     private let courseImageView = UIImageView()
     
-    private let extrasLabel = ColoredLabel()
+    private let extrasLabel = ColoredLabel.makeForExtras()
 
     private let contentStackView = UIStackView()
     
     private let courseInfoView = CourseInfoView()
     private let authorView = AuthorView()
     
-    let gradientView = GradientView()
+    let gradientView = GradientView(colors: [UIColor.clear, UIColor.clear, UIColor.black])
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -39,11 +39,11 @@ class CourseCollectionViewCell: UICollectionViewCell {
         contentView.pinToEdges(subview: gradientView)
         gradientView.alpha = 0.8
         contentView.pinToEdges(subview: extrasLabel, leading: 18, trailing: nil, top: 22, bottom: nil)
-        extrasLabel.textInsets = UIEdgeInsets(top: 4, left: 12, bottom: 4, right: 12)
-        extrasLabel.backgroundColor = .appYellow
-        extrasLabel.layer.cornerRadius = 10
-        extrasLabel.textColor = .white
-        extrasLabel.font = UIFont(name: poppinsMedium, size: 10)
+//        extrasLabel.textInsets = UIEdgeInsets(top: 4, left: 12, bottom: 4, right: 12)
+//        extrasLabel.backgroundColor = .appYellow
+//        extrasLabel.layer.cornerRadius = 10
+//        extrasLabel.textColor = .white
+//        extrasLabel.font = UIFont(name: poppinsMedium, size: 10)
         contentView.pinToEdges(subview: contentStackView, leading: 18, trailing: 18, top: nil, bottom: 22)
         contentStackView.axis = .vertical
         contentStackView.spacing = 7

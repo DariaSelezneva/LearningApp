@@ -15,6 +15,23 @@
 		43635D3E280842DA00D633CA /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43635D3D280842DA00D633CA /* HomePresenter.swift */; };
 		43635D412808432E00D633CA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43635D402808432E00D633CA /* User.swift */; };
 		43635D43280843C400D633CA /* CourseDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43635D42280843C400D633CA /* CourseDetailsViewModel.swift */; };
+		43657AEE280E8BE3005DB313 /* e_UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43657AED280E8BE3005DB313 /* e_UILabel.swift */; };
+		43657AF0280E9261005DB313 /* CoursePlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43657AEF280E9261005DB313 /* CoursePlayButton.swift */; };
+		43657AF2280E930D005DB313 /* CoursePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43657AF1280E930D005DB313 /* CoursePreview.swift */; };
+		43657AF6280EA193005DB313 /* CalendarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43657AF5280EA193005DB313 /* CalendarButton.swift */; };
+		43657AF8280EA4B0005DB313 /* ScheduleCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43657AF7280EA4B0005DB313 /* ScheduleCollectionView.swift */; };
+		43657AFA280EA566005DB313 /* ScheduleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43657AF9280EA566005DB313 /* ScheduleCollectionViewCell.swift */; };
+		43657AFC280EA7F5005DB313 /* FormUnitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43657AFB280EA7F5005DB313 /* FormUnitView.swift */; };
+		43657AFE280EAA0B005DB313 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43657AFD280EAA0B005DB313 /* ScheduleViewModel.swift */; };
+		43657B00280EAD8A005DB313 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43657AFF280EAD8A005DB313 /* ScheduleView.swift */; };
+		43657B02280EBD22005DB313 /* p_KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43657B01280EBD22005DB313 /* p_KeyboardHandler.swift */; };
+		43657B04280ED4AF005DB313 /* ScheduleStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43657B03280ED4AF005DB313 /* ScheduleStatusView.swift */; };
+		43657B06280ED9E9005DB313 /* e_UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43657B05280ED9E9005DB313 /* e_UIViewController.swift */; };
+		43657B08280EE30E005DB313 /* ModalPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43657B07280EE30E005DB313 /* ModalPresentationController.swift */; };
+		43657B0B280EE7A5005DB313 /* PresentAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43657B0A280EE7A5005DB313 /* PresentAnimation.swift */; };
+		43657B0D280EE7EC005DB313 /* DismissAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43657B0C280EE7EC005DB313 /* DismissAnimation.swift */; };
+		43657B0F280EEA34005DB313 /* TransitionDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43657B0E280EEA34005DB313 /* TransitionDriver.swift */; };
+		43657B11280EEB4B005DB313 /* CGPoint+Velocity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43657B10280EEB4B005DB313 /* CGPoint+Velocity.swift */; };
 		4381CBC4280D4AEC005E1388 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381CBC3280D4AEC005E1388 /* DataStore.swift */; };
 		4381CBC6280D4B5A005E1388 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381CBC5280D4B5A005E1388 /* Course.swift */; };
 		4381CBC8280D4C19005E1388 /* Streamer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4381CBC7280D4C19005E1388 /* Streamer.swift */; };
@@ -76,6 +93,23 @@
 		43635D3D280842DA00D633CA /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		43635D402808432E00D633CA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		43635D42280843C400D633CA /* CourseDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailsViewModel.swift; sourceTree = "<group>"; };
+		43657AED280E8BE3005DB313 /* e_UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_UILabel.swift; sourceTree = "<group>"; };
+		43657AEF280E9261005DB313 /* CoursePlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePlayButton.swift; sourceTree = "<group>"; };
+		43657AF1280E930D005DB313 /* CoursePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursePreview.swift; sourceTree = "<group>"; };
+		43657AF5280EA193005DB313 /* CalendarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarButton.swift; sourceTree = "<group>"; };
+		43657AF7280EA4B0005DB313 /* ScheduleCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCollectionView.swift; sourceTree = "<group>"; };
+		43657AF9280EA566005DB313 /* ScheduleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCollectionViewCell.swift; sourceTree = "<group>"; };
+		43657AFB280EA7F5005DB313 /* FormUnitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormUnitView.swift; sourceTree = "<group>"; };
+		43657AFD280EAA0B005DB313 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
+		43657AFF280EAD8A005DB313 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		43657B01280EBD22005DB313 /* p_KeyboardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p_KeyboardHandler.swift; sourceTree = "<group>"; };
+		43657B03280ED4AF005DB313 /* ScheduleStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleStatusView.swift; sourceTree = "<group>"; };
+		43657B05280ED9E9005DB313 /* e_UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_UIViewController.swift; sourceTree = "<group>"; };
+		43657B07280EE30E005DB313 /* ModalPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPresentationController.swift; sourceTree = "<group>"; };
+		43657B0A280EE7A5005DB313 /* PresentAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentAnimation.swift; sourceTree = "<group>"; };
+		43657B0C280EE7EC005DB313 /* DismissAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissAnimation.swift; sourceTree = "<group>"; };
+		43657B0E280EEA34005DB313 /* TransitionDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionDriver.swift; sourceTree = "<group>"; };
+		43657B10280EEB4B005DB313 /* CGPoint+Velocity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Velocity.swift"; sourceTree = "<group>"; };
 		4381CBC3280D4AEC005E1388 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		4381CBC5280D4B5A005E1388 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		4381CBC7280D4C19005E1388 /* Streamer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Streamer.swift; sourceTree = "<group>"; };
@@ -163,6 +197,18 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		43657B09280EE54E005DB313 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				43657B07280EE30E005DB313 /* ModalPresentationController.swift */,
+				43657B0E280EEA34005DB313 /* TransitionDriver.swift */,
+				43657B0A280EE7A5005DB313 /* PresentAnimation.swift */,
+				43657B0C280EE7EC005DB313 /* DismissAnimation.swift */,
+				43657B10280EEB4B005DB313 /* CGPoint+Velocity.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
 		4381CBCF280D57DD005E1388 /* Configurator */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +239,12 @@
 		4381CBDE280DB35D005E1388 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				43657AFF280EAD8A005DB313 /* ScheduleView.swift */,
+				43657AF5280EA193005DB313 /* CalendarButton.swift */,
+				43657AF7280EA4B0005DB313 /* ScheduleCollectionView.swift */,
+				43657AF9280EA566005DB313 /* ScheduleCollectionViewCell.swift */,
+				43657AFB280EA7F5005DB313 /* FormUnitView.swift */,
+				43657B03280ED4AF005DB313 /* ScheduleStatusView.swift */,
 			);
 			path = Subviews;
 			sourceTree = "<group>";
@@ -205,6 +257,7 @@
 				43878CA52806F01E00ED092C /* CourseViewModel.swift */,
 				43635D42280843C400D633CA /* CourseDetailsViewModel.swift */,
 				DAC9D81A28095160009929E9 /* LessonViewModel.swift */,
+				43657AFD280EAA0B005DB313 /* ScheduleViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -278,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				4389153D2805B5EA0070A2BD /* AppDelegate.swift */,
+				43657B01280EBD22005DB313 /* p_KeyboardHandler.swift */,
 				4381CBCF280D57DD005E1388 /* Configurator */,
 				438915512805B8820070A2BD /* View */,
 				43878C9D2806D32B00ED092C /* Interactor */,
@@ -287,6 +341,7 @@
 				43635D3F2808432000D633CA /* Entity */,
 				43878C9A2806D2B900ED092C /* ViewModel */,
 				438915632805C8A00070A2BD /* Extensions */,
+				43657B09280EE54E005DB313 /* Modal */,
 				438915462805B5EC0070A2BD /* Assets.xcassets */,
 				43878CA72806F81000ED092C /* Fonts */,
 				438915482805B5ED0070A2BD /* LaunchScreen.storyboard */,
@@ -374,8 +429,10 @@
 			isa = PBXGroup;
 			children = (
 				43878CB42806FC5100ED092C /* e_String.swift */,
-				43878C962806C4D400ED092C /* e_UIView.swift */,
 				DAC9D81828095096009929E9 /* e_UIColor.swift */,
+				43657B05280ED9E9005DB313 /* e_UIViewController.swift */,
+				43878C962806C4D400ED092C /* e_UIView.swift */,
+				43657AED280E8BE3005DB313 /* e_UILabel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -383,6 +440,8 @@
 		DA8D31C228096C5A006E5B3F /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
+				43657AF1280E930D005DB313 /* CoursePreview.swift */,
+				43657AEF280E9261005DB313 /* CoursePlayButton.swift */,
 				DA8D31C028096BBD006E5B3F /* LessonsTableView.swift */,
 				DA8D31C3280985AC006E5B3F /* LessonTableViewCell.swift */,
 				DA8D31C5280993F8006E5B3F /* LessonPlayView.swift */,
@@ -467,30 +526,44 @@
 			files = (
 				43878CB52806FC5100ED092C /* e_String.swift in Sources */,
 				438915622805BFA50070A2BD /* UserViewController.swift in Sources */,
+				43657B02280EBD22005DB313 /* p_KeyboardHandler.swift in Sources */,
 				43878C9C2806D2E900ED092C /* StreamerViewModel.swift in Sources */,
+				43657AF2280E930D005DB313 /* CoursePreview.swift in Sources */,
+				43657B00280EAD8A005DB313 /* ScheduleView.swift in Sources */,
 				DAC9D81928095096009929E9 /* e_UIColor.swift in Sources */,
 				43635D3E280842DA00D633CA /* HomePresenter.swift in Sources */,
 				4381CBCE280D534B005E1388 /* Lesson.swift in Sources */,
 				43635D412808432E00D633CA /* User.swift in Sources */,
+				43657B0B280EE7A5005DB313 /* PresentAnimation.swift in Sources */,
 				438915602805BF990070A2BD /* MessagesViewController.swift in Sources */,
 				DA8D31C4280985AC006E5B3F /* LessonTableViewCell.swift in Sources */,
 				43878C8B2806A2F900ED092C /* StreamingView.swift in Sources */,
+				43657B0D280EE7EC005DB313 /* DismissAnimation.swift in Sources */,
 				4381CBD3280D683C005E1388 /* CourseDetailsInteractor.swift in Sources */,
 				DA8D31C128096BBD006E5B3F /* LessonsTableView.swift in Sources */,
 				4381CBC8280D4C19005E1388 /* Streamer.swift in Sources */,
 				43635D382808106F00D633CA /* ColoredLabel.swift in Sources */,
+				43657B04280ED4AF005DB313 /* ScheduleStatusView.swift in Sources */,
 				4381CBD5280D6B9C005E1388 /* CourseDetailsPresenter.swift in Sources */,
 				43878C892806A2DE00ED092C /* StreamingCollectionViewCell.swift in Sources */,
+				43657B06280ED9E9005DB313 /* e_UIViewController.swift in Sources */,
 				43878C8F2806A34200ED092C /* CourseCollectionViewCell.swift in Sources */,
 				4389155E2805BF850070A2BD /* HomeViewController.swift in Sources */,
 				4381CBCC280D4D7C005E1388 /* Person.swift in Sources */,
 				43635D36280809F400D633CA /* GradientView.swift in Sources */,
 				4381CBC4280D4AEC005E1388 /* DataStore.swift in Sources */,
 				4381CBCA280D4D36005E1388 /* Message.swift in Sources */,
+				43657B11280EEB4B005DB313 /* CGPoint+Velocity.swift in Sources */,
+				43657AFC280EA7F5005DB313 /* FormUnitView.swift in Sources */,
 				43878CB32806F97600ED092C /* Fonts.swift in Sources */,
+				43657AFA280EA566005DB313 /* ScheduleCollectionViewCell.swift in Sources */,
+				43657B0F280EEA34005DB313 /* TransitionDriver.swift in Sources */,
 				DAC9D81B28095160009929E9 /* LessonViewModel.swift in Sources */,
+				43657B08280EE30E005DB313 /* ModalPresentationController.swift in Sources */,
 				4381CBDB280D7E38005E1388 /* FollowButton.swift in Sources */,
+				43657AF8280EA4B0005DB313 /* ScheduleCollectionView.swift in Sources */,
 				DA8D31CA2809AFEC006E5B3F /* FollowClassViewController.swift in Sources */,
+				43657AF0280E9261005DB313 /* CoursePlayButton.swift in Sources */,
 				43878C972806C4D400ED092C /* e_UIView.swift in Sources */,
 				43878C952806A3A100ED092C /* FilterCollectionViewCell.swift in Sources */,
 				43878CBC280718B900ED092C /* CoursesCollectionView.swift in Sources */,
@@ -503,14 +576,17 @@
 				43878C8D2806A30B00ED092C /* UserView.swift in Sources */,
 				43878C932806A38200ED092C /* CoursesFilterView.swift in Sources */,
 				43635D43280843C400D633CA /* CourseDetailsViewModel.swift in Sources */,
+				43657AFE280EAA0B005DB313 /* ScheduleViewModel.swift in Sources */,
 				43635D342807FD7F00D633CA /* AuthorView.swift in Sources */,
 				DA8D31C6280993F8006E5B3F /* LessonPlayView.swift in Sources */,
 				DA8D31C82809AAB9006E5B3F /* HomeRouter.swift in Sources */,
 				43878CBA280707B400ED092C /* UserAvatarView.swift in Sources */,
 				43878CB8280704A800ED092C /* BellIndicatorView.swift in Sources */,
+				43657AF6280EA193005DB313 /* CalendarButton.swift in Sources */,
 				4389153E2805B5EA0070A2BD /* AppDelegate.swift in Sources */,
 				43878CA22806D43D00ED092C /* HomeInteractor.swift in Sources */,
 				43635D3A2808137000D633CA /* CourseInfoView.swift in Sources */,
+				43657AEE280E8BE3005DB313 /* e_UILabel.swift in Sources */,
 				4381CBC6280D4B5A005E1388 /* Course.swift in Sources */,
 				438915532805BDCF0070A2BD /* MainTabBarController.swift in Sources */,
 				43878CA62806F01E00ED092C /* CourseViewModel.swift in Sources */,

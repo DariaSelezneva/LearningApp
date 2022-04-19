@@ -20,8 +20,8 @@ class AuthorView: UIView {
     
     private let imageContainerView = UIView()
     private let imageView = UIImageView()
-    private let nameLabel = UILabel()
-    private let positionLabel = UILabel()
+    private let nameLabel = UILabel.make(fontName: poppinsSemiBold, size: 16, textColor: .white)
+    private let positionLabel = UILabel.make(fontName: poppinsMedium, size: 10, textColor: .appGray)
     private let onlineIndicator = UIView()
 
     override init(frame: CGRect) {
@@ -42,7 +42,7 @@ class AuthorView: UIView {
         horizontalStackView.addArrangedSubview(imageContainerView)
         horizontalStackView.addArrangedSubview(verticalStackView)
         verticalStackView.axis = .vertical
-        verticalStackView.spacing = 4
+        verticalStackView.spacing = 2
         verticalStackView.addArrangedSubview(nameLabel)
         verticalStackView.addArrangedSubview(positionLabel)
         imageContainerView.pinToEdges(subview: imageView)
@@ -56,10 +56,6 @@ class AuthorView: UIView {
         onlineIndicator.layer.borderColor = UIColor.white.cgColor
         onlineIndicator.layer.borderWidth = 1
         onlineIndicator.backgroundColor = .appGreen
-        nameLabel.font = UIFont(name: poppinsSemiBold, size: 16)
-        nameLabel.textColor = .white
-        positionLabel.font = UIFont(name: poppinsMedium, size: 10)
-        positionLabel.textColor = .appGray
     }
     
     func update(image: UIImage, name: String, position: String, isOnline: Bool) {

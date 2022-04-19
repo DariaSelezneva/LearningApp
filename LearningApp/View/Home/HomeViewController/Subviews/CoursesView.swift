@@ -10,7 +10,7 @@ import UIKit
 class CoursesView: UIView {
     
     private let stackView = UIStackView()
-    private let label = UILabel()
+    private let label = UILabel.make(fontName: poppinsRegular, size: 18, textColor: .appDarkGray)
     let filterView = CoursesFilterView()
     let coursesCollectionView = CoursesCollectionView()
     private let paginationView = PaginationIndicatorView()
@@ -36,7 +36,6 @@ class CoursesView: UIView {
         coursesCollectionView.heightAnchor.constraint(equalToConstant: 386).isActive = true
         paginationView.heightAnchor.constraint(equalToConstant: 22).isActive = true
         label.text = "Upcoming course of this week"
-        label.font = UIFont(name: poppinsRegular, size: 18)
         coursesCollectionView.onHighlight = { [unowned self] index in
             paginationView.indexSelected = index
         }

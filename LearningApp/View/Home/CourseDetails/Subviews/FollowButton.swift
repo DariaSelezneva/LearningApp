@@ -18,12 +18,7 @@ class FollowButton: UIButton {
     var triangleHeight: CGFloat = 8
     var triangleXPosition: CGFloat = 30
     
-    let label: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: poppinsMedium, size: 16)
-        label.textColor = .white
-        return label
-    }()
+    let label = UILabel.make(fontName: poppinsMedium, size: 16, textColor: .white)
     
     override func draw(_ rect: CGRect) {
         let baseRect = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height - triangleHeight)

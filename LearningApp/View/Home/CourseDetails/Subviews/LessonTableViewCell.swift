@@ -37,21 +37,9 @@ class LessonTableViewCell: UITableViewCell {
         return playView
     }()
     
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: poppinsSemiBold, size: 14)
-        label.textColor = .appDarkGray
-        label.numberOfLines = 2
-        label.lineBreakMode = .byTruncatingTail
-        return label
-    }()
+    private let titleLabel = UILabel.make(fontName: poppinsSemiBold, size: 14, textColor: .appDarkGray, numberOfLines: 2)
     
-    private lazy var durationLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: poppinsRegular, size: 14)
-        label.textColor = .appGray
-        return label
-    }()
+    private lazy var durationLabel = UILabel.make(fontName: poppinsRegular, size: 14, textColor: .appGray2)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -66,7 +54,7 @@ class LessonTableViewCell: UITableViewCell {
         let containerView = UIView()
         contentView.pinToEdges(subview: containerView, leading: 0, trailing: 0, top: 8, bottom: 8)
         containerView.layer.cornerRadius = 8
-        containerView.backgroundColor = .appLightGray
+        containerView.backgroundColor = .appLightGray2
         contentView.pinToEdges(subview: commonStackView, leading: 8, trailing: 8, top: 16, bottom: 16)
     }
     
