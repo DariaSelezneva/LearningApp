@@ -14,6 +14,9 @@ extension UILabel {
         label.font = UIFont(name: fontName, size: size)
         label.textColor = textColor
         label.numberOfLines = numberOfLines
+        if numberOfLines != 0 {
+            label.lineBreakMode = .byTruncatingTail
+        }
         label.textAlignment = .natural
         return label
     }

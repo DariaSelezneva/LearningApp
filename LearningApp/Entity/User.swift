@@ -17,7 +17,15 @@ struct User {
     var courses: [Int]
     var favoriteCourses: [Int]
     var notifications: [String]
-    var messages: [Message]
+    var chats: [Chat]
+    
+    var newMessagesCount: Int {
+        chats
+            .map({$0.messages})
+            .reduce([]){$0 + $1}
+            .filter({!$0.isRead})
+            .count
+    }
     
     static let sample = User(
         id: 0,
@@ -29,5 +37,5 @@ struct User {
         courses: [],
         favoriteCourses: [Course.sample[0].id],
         notifications: ["New notification"],
-        messages: Message.sample)
+        chats: Chat.sample)
 }

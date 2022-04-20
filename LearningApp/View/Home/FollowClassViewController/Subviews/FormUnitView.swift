@@ -38,7 +38,7 @@ class FormUnitView: UIView {
     
     private let stackView = UIStackView()
     private let label = UILabel.make(fontName: poppinsSemiBold, size: 14, textColor: .appDarkGray)
-    private let textField = UITextField()
+    private let textField = UITextField.makeForApp()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -67,11 +67,5 @@ class FormUnitView: UIView {
         stackView.addArrangedSubview(textField)
         textField.heightAnchor.constraint(equalToConstant: 56).isActive = true
         textField.setWidth(equalTo: self)
-        textField.layer.cornerRadius = 6
-        textField.backgroundColor = .appLightGray2
-        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: 56))
-        textField.leftViewMode = .always
-        textField.font = UIFont(name: poppinsRegular, size: 16)
-        textField.textColor = .appDarkGray
     }
 }

@@ -29,15 +29,12 @@ class CourseDetailsViewController: UIViewController {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 20
+        stackView.alignment = .leading
         stackView.addArrangedSubview(coursePreview)
         stackView.addArrangedSubview(titleLabel)
-        let additionalStackView = UIStackView()
-        additionalStackView.axis = .vertical
-        additionalStackView.spacing = 10
-        additionalStackView.alignment = .leading
-        additionalStackView.addArrangedSubview(coloredLabelsView)
-        additionalStackView.addArrangedSubview(descriptionLabel)
-        stackView.addArrangedSubview(additionalStackView)
+        stackView.addArrangedSubview(coloredLabelsView)
+        stackView.setCustomSpacing(10, after: coloredLabelsView)
+        stackView.addArrangedSubview(descriptionLabel)
         stackView.addArrangedSubview(authorView)
         return stackView
     }()
@@ -61,7 +58,7 @@ class CourseDetailsViewController: UIViewController {
         super.viewDidLoad()
         setupNavigationBar()
         view.backgroundColor = .white
-        view.pinToEdges(subview: scrollView)
+        view.pinToEdges(subview: scrollView, bottom: AppTabBar.height)
         scrollView.setWidth(equalTo: view)
         scrollView.pinToEdges(subview: containerView)
         containerView.setWidth(equalTo: scrollView)
@@ -82,7 +79,7 @@ class CourseDetailsViewController: UIViewController {
         durationExtrasStackView.addArrangedSubview(durationLabel)
         durationExtrasStackView.addArrangedSubview(extrasLabel)
         authorView.nameColor = .appDarkGray
-        view.pinToLayoutMargins(subview: followButton, top: nil, bottom: 8)
+        view.pinToEdges(subview: followButton, leading: 16, trailing: 16, top: nil, bottom: AppTabBar.height + 8)
         followButton.heightAnchor.constraint(equalToConstant: 64).isActive = true
         followButton.text = "Follow class"
         followButton.addTarget(self, action: #selector(didPressFollow(_:)), for: .touchUpInside)
@@ -134,6 +131,7 @@ extension CourseDetailsViewController: CourseDetailsDisplayLogic {
         authorView.update(image: courseDetails.authorImage, name: courseDetails.authorName, position: courseDetails.authorPosition, isOnline: courseDetails.isOnline)
         durationLabel.updateForCourseDuration(courseDetails.duration)
         extrasLabel.text = courseDetails.extras
+        extrasLabel.alpha = courseDetails.extras == nil ? 0.0 : 1.0
         lessonsTableViewHeightConstraint = lessonsTableView.heightAnchor.constraint(equalToConstant: CGFloat(100 * courseDetails.lessons.count))
         lessonsTableViewHeightConstraint.isActive = true
         lessonsTableView.update(with: courseDetails.lessons)

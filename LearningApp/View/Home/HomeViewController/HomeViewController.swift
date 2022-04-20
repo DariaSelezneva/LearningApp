@@ -30,14 +30,15 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        view.pinToEdges(subview: scrollView)
+        view.pinToEdges(subview: scrollView, bottom: AppTabBar.height)
         scrollView.setWidth(equalTo: view)
         scrollView.pinToEdges(subview: containerView)
         containerView.setWidth(equalTo: scrollView)
         containerView.pinToEdges(subview: stackView, leading: 20, trailing: 20, top: nil, bottom: 16)
         stackView.topAnchor.constraint(equalTo: containerView.layoutMarginsGuide.topAnchor, constant: 20).isActive = true
         stackView.axis = .vertical
-        stackView.spacing = 20
+        let spacing = UIScreen.main.bounds.height * 0.03
+        stackView.spacing = spacing
         stackView.distribution = .equalSpacing
         stackView.addArrangedSubview(userView)
         stackView.addArrangedSubview(streamingView)

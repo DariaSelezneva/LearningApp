@@ -68,8 +68,9 @@ class UserView: UIView {
     func updateForMessages(with user: UserViewModel) {
         avatarView.update(image: user.image ?? UIImage(systemName: "person")!, isOnline: user.isOnline)
         primaryLabel.text = "My messages"
-        secondaryLabel.textColor = .appLightGray
+        secondaryLabel.textColor = .appTabGray
         secondaryLabel.font = UIFont(name: poppinsRegular, size: 14)
+        secondaryLabel.text = user.newMessagesCount
         bellIndicatorView.update(showsIndicator: user.hasNotifications)
     }
 }

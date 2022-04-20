@@ -39,11 +39,6 @@ class CourseCollectionViewCell: UICollectionViewCell {
         contentView.pinToEdges(subview: gradientView)
         gradientView.alpha = 0.8
         contentView.pinToEdges(subview: extrasLabel, leading: 18, trailing: nil, top: 22, bottom: nil)
-//        extrasLabel.textInsets = UIEdgeInsets(top: 4, left: 12, bottom: 4, right: 12)
-//        extrasLabel.backgroundColor = .appYellow
-//        extrasLabel.layer.cornerRadius = 10
-//        extrasLabel.textColor = .white
-//        extrasLabel.font = UIFont(name: poppinsMedium, size: 10)
         contentView.pinToEdges(subview: contentStackView, leading: 18, trailing: 18, top: nil, bottom: 22)
         contentStackView.axis = .vertical
         contentStackView.spacing = 7
@@ -56,6 +51,7 @@ class CourseCollectionViewCell: UICollectionViewCell {
     func update(with course: CourseViewModel) {
         courseImageView.image = course.image
         extrasLabel.text = course.extras
+        extrasLabel.isHidden = course.extras == nil
         courseInfoView.update(with: course)
         authorView.update(image: course.authorImage, name: course.authorName, position: course.authorPosition, isOnline: false)
     }

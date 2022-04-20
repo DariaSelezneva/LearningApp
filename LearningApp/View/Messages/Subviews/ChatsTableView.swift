@@ -1,15 +1,15 @@
 //
-//  LessonsTableView.swift
+//  ChatsTableView.swift
 //  LearningApp
 //
-//  Created by Дарья Селезнёва on 15.04.2022.
+//  Created by Daria on 20.04.2022.
 //
 
 import UIKit
 
-class LessonsTableView: UIView {
-    
-    private var dataSource: [LessonViewModel] = LessonViewModel.sample
+class ChatsTableView: UIView {
+
+    private var dataSource: [ChatViewModel] = []
     
     private let tableView = UITableView()
 
@@ -26,35 +26,36 @@ class LessonsTableView: UIView {
         self.pinToEdges(subview: tableView)
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.separatorStyle = .none
         tableView.isScrollEnabled = false
-        tableView.register(LessonTableViewCell.self, forCellReuseIdentifier: LessonTableViewCell.reuseIdentifier)
+        tableView.separatorInset.left = 72
+        tableView.separatorInset.right = 16
+        tableView.separatorColor = .appLightGray
+        tableView.register(ChatTableViewCell.self, forCellReuseIdentifier: ChatTableViewCell.reuseIdentifier)
     }
     
-    func update(with lessons: [LessonViewModel]) {
-        dataSource = lessons
+    func update(with chats: [ChatViewModel]) {
+        dataSource = chats
         tableView.reloadData()
     }
 }
 
-extension LessonsTableView: UITableViewDataSource {
+extension ChatsTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: LessonTableViewCell.reuseIdentifier, for: indexPath) as! LessonTableViewCell
-        let lesson = dataSource[indexPath.row]
-        cell.update(with: lesson)
+        let cell = tableView.dequeueReusableCell(withIdentifier: ChatTableViewCell.reuseIdentifier, for: indexPath) as! ChatTableViewCell
+        let chat = dataSource[indexPath.row]
+        cell.update(with: chat)
         return cell
     }
-    
 }
 
-extension LessonsTableView: UITableViewDelegate {
+extension ChatsTableView: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return false
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

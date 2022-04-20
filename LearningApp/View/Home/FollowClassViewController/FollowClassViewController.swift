@@ -30,8 +30,6 @@ class FollowClassViewController: UIViewController {
         registerForKeyboardNotifications(for: scrollView)
         hideKeyboardWhenTappedAround()
         view.pinToEdges(subview: scrollViewContainer)
-//        topConstraint = scrollViewContainer.topAnchor.constraint(equalTo: view.topAnchor, constant: 130)
-//        topConstraint.isActive = true
         scrollViewContainer.backgroundColor = .white
         scrollViewContainer.layer.cornerRadius = 24
         scrollViewContainer.addSubview(dragView)
@@ -72,4 +70,4 @@ class FollowClassViewController: UIViewController {
     }
 }
 
-extension FollowClassViewController: KeyboardHandler {}
+

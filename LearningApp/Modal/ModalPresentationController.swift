@@ -35,7 +35,6 @@ class ModalPresentationController: UIPresentationController {
         super.presentationTransitionWillBegin()
         containerView?.addSubview(dimmView)
         containerView?.addSubview(presentedView!)
-        print(dimmView.frame)
         performAlongsideTransitionIfPossible { [unowned self] in
             self.dimmView.alpha = 1
         }
@@ -55,7 +54,6 @@ class ModalPresentationController: UIPresentationController {
     override func containerViewDidLayoutSubviews() {
         super.containerViewDidLayoutSubviews()
         dimmView.frame = containerView!.frame
-        print(dimmView.frame)
         presentedView?.frame = frameOfPresentedViewInContainerView
         
     }
