@@ -15,8 +15,15 @@ class ModalPresentationController: UIPresentationController {
         let view = UIView()
         view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         view.alpha = 1
+        let tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer.addTarget(self, action: #selector(dismissOnTap))
+        view.addGestureRecognizer(tapRecognizer)
         return view
     }()
+    
+    @objc func dismissOnTap() {
+        self.presentedViewController.dismiss(animated: true)
+    }
     
     override var frameOfPresentedViewInContainerView: CGRect {
         let bounds = containerView!.bounds

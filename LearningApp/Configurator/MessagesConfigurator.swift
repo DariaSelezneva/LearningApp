@@ -9,11 +9,8 @@ import Foundation
 
 final class MessagesConfigurator {
     
-    static let shared = MessagesConfigurator()
-    
-    private init() {}
-    
-    func configure(viewController: MessagesViewController) {
+    static func configure() -> MessagesViewController {
+        let viewController = MessagesViewController()
         let interactor = MessagesInteractor()
         let presenter = MessagesPresenter()
         let router = MessagesRouter()
@@ -22,6 +19,7 @@ final class MessagesConfigurator {
         interactor.presenter = presenter
         presenter.viewController = viewController
         router.viewController = viewController
+        return viewController
     }
 }
 

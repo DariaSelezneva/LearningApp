@@ -11,9 +11,9 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
     
-    let homeVC = HomeViewController()
+    let homeVC = HomeConfigurator.configure()
     let exploreVC = ExploreViewController()
-    let messagesVC = MessagesViewController()
+    let messagesVC = MessagesConfigurator.configure()
     let userVC = UserViewController()
     
     let customTabBar = AppTabBar()
@@ -26,8 +26,6 @@ class MainTabBarController: UITabBarController {
         customTabBar.didSelectItem = { index in
             self.selectedIndex = index
         }
-        HomeConfigurator.shared.configure(viewController: homeVC)
-        MessagesConfigurator.shared.configure(viewController: messagesVC)
         if let count = DataStore.shared.user?.newMessagesCount, count != 0 {
             customTabBar.messagesItem.badgeValue = String(count)
         }

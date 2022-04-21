@@ -17,8 +17,6 @@ class MessagesViewController: UIViewController {
     var interactor : MessagesInteractionLogic?
     var router : MessagesRouter?
     
-    private let scrollView = UIScrollView()
-    private let containerView = UIView()
     private let stackView = UIStackView()
     
     private let userView = UserView()
@@ -32,12 +30,8 @@ class MessagesViewController: UIViewController {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
         view.backgroundColor = .white
-        view.pinToEdges(subview: scrollView, bottom: AppTabBar.height)
-        scrollView.setWidth(equalTo: view)
-        scrollView.pinToEdges(subview: containerView)
-        containerView.setWidth(equalTo: scrollView)
-        containerView.pinToEdges(subview: stackView, leading: 20, trailing: 20, top: nil, bottom: nil)
-        stackView.topAnchor.constraint(equalTo: containerView.layoutMarginsGuide.topAnchor, constant: 20).isActive = true
+        view.pinToEdges(subview: stackView, leading: 20, trailing: 20, top: nil, bottom: nil)
+        stackView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 20).isActive = true
         stackView.axis = .vertical
         stackView.spacing = 32
         stackView.distribution = .equalSpacing
@@ -53,7 +47,7 @@ class MessagesViewController: UIViewController {
                 interactor?.getMessages()
             }
         }
-        containerView.pinToEdges(subview: chatsTableView, top: nil, bottom: 16)
+        view.pinToEdges(subview: chatsTableView, top: nil, bottom: AppTabBar.height + 16)
         chatsTableView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 16).isActive = true
         interactor?.getUser()
         interactor?.getMessages()
@@ -72,9 +66,6 @@ extension MessagesViewController: MessagesDisplayLogic {
     }
     
     func displayChats(_ chats: [ChatViewModel]) {
-        chatsHeightConstraint.isActive = false
-        chatsHeightConstraint = chatsTableView.heightAnchor.constraint(equalToConstant: CGFloat(100 * chats.count))
-        chatsHeightConstraint.isActive = true
         chatsTableView.update(with: chats)
     }
 }

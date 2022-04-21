@@ -24,7 +24,6 @@
 		4363D3EF280FF29B00C702B0 /* MessagesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4363D3EE280FF29B00C702B0 /* MessagesConfigurator.swift */; };
 		4363D3F1280FF2DF00C702B0 /* MessagesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4363D3F0280FF2DF00C702B0 /* MessagesRouter.swift */; };
 		4363D3F3281000F000C702B0 /* e_UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4363D3F2281000F000C702B0 /* e_UITextField.swift */; };
-		4363D3F5281006C100C702B0 /* e_UITabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4363D3F4281006C100C702B0 /* e_UITabBar.swift */; };
 		4363D3FE2810244B00C702B0 /* AppTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4363D3FD2810244B00C702B0 /* AppTabBar.swift */; };
 		4363D400281024EC00C702B0 /* AppTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4363D3FF281024EC00C702B0 /* AppTabItem.swift */; };
 		4363D40228103E6B00C702B0 /* e_Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4363D40128103E6B00C702B0 /* e_Date.swift */; };
@@ -116,7 +115,6 @@
 		4363D3EE280FF29B00C702B0 /* MessagesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesConfigurator.swift; sourceTree = "<group>"; };
 		4363D3F0280FF2DF00C702B0 /* MessagesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesRouter.swift; sourceTree = "<group>"; };
 		4363D3F2281000F000C702B0 /* e_UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_UITextField.swift; sourceTree = "<group>"; };
-		4363D3F4281006C100C702B0 /* e_UITabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_UITabBar.swift; sourceTree = "<group>"; };
 		4363D3FD2810244B00C702B0 /* AppTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBar.swift; sourceTree = "<group>"; };
 		4363D3FF281024EC00C702B0 /* AppTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabItem.swift; sourceTree = "<group>"; };
 		4363D40128103E6B00C702B0 /* e_Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_Date.swift; sourceTree = "<group>"; };
@@ -490,7 +488,6 @@
 				43878C962806C4D400ED092C /* e_UIView.swift */,
 				43657AED280E8BE3005DB313 /* e_UILabel.swift */,
 				4363D3F2281000F000C702B0 /* e_UITextField.swift */,
-				4363D3F4281006C100C702B0 /* e_UITabBar.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -610,7 +607,6 @@
 				4381CBD5280D6B9C005E1388 /* CourseDetailsPresenter.swift in Sources */,
 				43878C892806A2DE00ED092C /* StreamingCollectionViewCell.swift in Sources */,
 				43657B14280F05F1005DB313 /* ChatViewModel.swift in Sources */,
-				4363D3F5281006C100C702B0 /* e_UITabBar.swift in Sources */,
 				4363D3E7280FE0BD00C702B0 /* ChatTableViewCell.swift in Sources */,
 				43657B06280ED9E9005DB313 /* e_UIViewController.swift in Sources */,
 				43878C8F2806A34200ED092C /* CourseCollectionViewCell.swift in Sources */,

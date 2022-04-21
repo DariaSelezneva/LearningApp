@@ -58,7 +58,8 @@ class LessonTableViewCell: UITableViewCell {
         contentView.pinToEdges(subview: commonStackView, leading: 8, trailing: 8, top: 16, bottom: 16)
     }
     
-    func update(with lesson: LessonViewModel) {
+    func update(with lesson: LessonViewModel, isRed: Bool) {
+        playView.update(isRed: isRed)
         titleLabel.text = lesson.title
         durationLabel.text = lesson.duration
     }

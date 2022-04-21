@@ -26,7 +26,7 @@ class ChatsTableView: UIView {
         self.pinToEdges(subview: tableView)
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.isScrollEnabled = false
+        tableView.isScrollEnabled = true
         tableView.separatorInset.left = 72
         tableView.separatorInset.right = 16
         tableView.separatorColor = .appLightGray

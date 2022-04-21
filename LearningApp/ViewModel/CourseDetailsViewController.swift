@@ -52,19 +52,20 @@ class CourseDetailsViewController: UIViewController {
     private let lessonsTableView = LessonsTableView()
     private var lessonsTableViewHeightConstraint = NSLayoutConstraint()
     
-    private let followButton = FollowButton()
+    private let followButton = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
         view.backgroundColor = .white
-        view.pinToEdges(subview: scrollView, bottom: AppTabBar.height)
+        view.pinToEdges(subview: scrollView, top: nil, bottom: AppTabBar.height)
+        scrollView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 16).isActive = true
         scrollView.setWidth(equalTo: view)
         scrollView.pinToEdges(subview: containerView)
         containerView.setWidth(equalTo: scrollView)
         containerView.pinToEdges(subview: stackView, leading: 20, trailing: 20, top: nil, bottom: nil)
-        stackView.topAnchor.constraint(equalTo: containerView.layoutMarginsGuide.topAnchor, constant: 20).isActive = true
-        containerView.pinToEdges(subview: lessonsTableView, leading: 20, trailing: 20, top: nil, bottom: 16)
+        stackView.topAnchor.constraint(equalTo: containerView.layoutMarginsGuide.topAnchor, constant: 10).isActive = true
+        containerView.pinToEdges(subview: lessonsTableView, leading: 20, trailing: 20, top: nil, bottom: 80)
         lessonsTableView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 16).isActive = true
         coursePreview.setWidth(equalTo: stackView)
         coursePreview.heightAnchor.constraint(equalToConstant: 230).isActive = true
@@ -79,13 +80,21 @@ class CourseDetailsViewController: UIViewController {
         durationExtrasStackView.addArrangedSubview(durationLabel)
         durationExtrasStackView.addArrangedSubview(extrasLabel)
         authorView.nameColor = .appDarkGray
-        view.pinToEdges(subview: followButton, leading: 16, trailing: 16, top: nil, bottom: AppTabBar.height + 8)
-        followButton.heightAnchor.constraint(equalToConstant: 64).isActive = true
-        followButton.text = "Follow class"
+        view.pinToEdges(subview: followButton, leading: 16, trailing: 16, top: nil, bottom: AppTabBar.height + 16)
+        followButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
+        followButton.layer.cornerRadius = 8
+        followButton.backgroundColor = .appRed
+        followButton.titleLabel?.font = UIFont(name: poppinsMedium, size: 16)
+        followButton.tintColor = .white
+        followButton.setTitle("Follow class", for: .normal)
         followButton.addTarget(self, action: #selector(didPressFollow(_:)), for: .touchUpInside)
     }
     
     func setupNavigationBar() {
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
         navigationController?.navigationBar.tintColor = .appRed
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: poppinsSemiBold, size: 18)!]
         navigationItem.title = "Course Details"
@@ -99,7 +108,12 @@ class CourseDetailsViewController: UIViewController {
         let leftBarButtonItem = UIBarButtonItem(customView: containerView)
         self.navigationItem.leftBarButtonItem = leftBarButtonItem
     }
-
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        coursePreview.dropShadow(color: .black, height: 3, shadowRadius: 10, opacity: 0.4, cornerRadius: 24)
+    }
+    
     @objc func backToMain() {
         self.navigationController?.popViewController(animated: true)
     }
@@ -113,11 +127,6 @@ class CourseDetailsViewController: UIViewController {
         sender.animateScale(duration: 0.1, scale: 1.03)
         guard let courseID = courseID else { return }
         router?.showSchedule(courseID: courseID)
-    }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        coursePreview.dropShadow(color: .black, height: 3, shadowRadius: 10, opacity: 0.4, cornerRadius: 24)
     }
 }
 

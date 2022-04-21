@@ -45,7 +45,7 @@ extension LessonsTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: LessonTableViewCell.reuseIdentifier, for: indexPath) as! LessonTableViewCell
         let lesson = dataSource[indexPath.row]
-        cell.update(with: lesson)
+        cell.update(with: lesson, isRed: indexPath.row == 0)
         return cell
     }
     

@@ -8,12 +8,9 @@
 import Foundation
 
 final class CourseDetailsConfigurator {
-    
-    static let shared = CourseDetailsConfigurator()
-    
-    private init() {}
-    
-    func configure(viewController: CourseDetailsViewController) {
+ 
+    static func configure() -> CourseDetailsViewController {
+        let viewController = CourseDetailsViewController()
         let interactor = CourseDetailsInteractor()
         let presenter = CourseDetailsPresenter()
         let router = CourseDetailsRouter()
@@ -22,5 +19,6 @@ final class CourseDetailsConfigurator {
         interactor.presenter = presenter
         presenter.viewController = viewController
         router.viewController = viewController
+        return viewController
     }
 }
