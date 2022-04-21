@@ -40,5 +40,4 @@ class ColoredLabelsView: UIView {
         themeLabel.text = theme
         costLabel.text = cost
     }
-
 }

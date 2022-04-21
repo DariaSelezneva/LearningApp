@@ -9,7 +9,6 @@ import Foundation
 
 protocol HomeRoutingLogic {
     func navigateToCourseDetails(courseID: Int)
-    func showFollowClassModal(courseID: Int)
 }
 
 class HomeRouter: HomeRoutingLogic {
@@ -27,9 +26,8 @@ class HomeRouter: HomeRoutingLogic {
         destinationVC.display(courseDetailsViewModel)
         destinationVC.displayFavorite(isFavorite: isFavorite)
         sourceVC.navigationController?.pushViewController(destinationVC, animated: true)
-    }
-    
-    func showFollowClassModal(courseID: Int) {
-        
+        if let tabbarController = sourceVC.tabBarController as? MainTabBarController {
+            tabbarController.customTabBar.isHidden = true
+        }
     }
 }

@@ -58,14 +58,14 @@ class CourseDetailsViewController: UIViewController {
         super.viewDidLoad()
         setupNavigationBar()
         view.backgroundColor = .white
-        view.pinToEdges(subview: scrollView, top: nil, bottom: AppTabBar.height)
+        view.pinToEdges(subview: scrollView, top: nil)
         scrollView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 16).isActive = true
         scrollView.setWidth(equalTo: view)
         scrollView.pinToEdges(subview: containerView)
         containerView.setWidth(equalTo: scrollView)
         containerView.pinToEdges(subview: stackView, leading: 20, trailing: 20, top: nil, bottom: nil)
         stackView.topAnchor.constraint(equalTo: containerView.layoutMarginsGuide.topAnchor, constant: 10).isActive = true
-        containerView.pinToEdges(subview: lessonsTableView, leading: 20, trailing: 20, top: nil, bottom: 80)
+        containerView.pinToEdges(subview: lessonsTableView, leading: 20, trailing: 20, top: nil, bottom: 40)
         lessonsTableView.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 16).isActive = true
         coursePreview.setWidth(equalTo: stackView)
         coursePreview.heightAnchor.constraint(equalToConstant: 230).isActive = true
@@ -80,7 +80,7 @@ class CourseDetailsViewController: UIViewController {
         durationExtrasStackView.addArrangedSubview(durationLabel)
         durationExtrasStackView.addArrangedSubview(extrasLabel)
         authorView.nameColor = .appDarkGray
-        view.pinToEdges(subview: followButton, leading: 16, trailing: 16, top: nil, bottom: AppTabBar.height + 16)
+        view.pinToEdges(subview: followButton, leading: 16, trailing: 16, top: nil, bottom: 16)
         followButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
         followButton.layer.cornerRadius = 8
         followButton.backgroundColor = .appRed
